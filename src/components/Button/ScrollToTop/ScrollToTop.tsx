@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from './ScrollToTop.style'
 const ScrollToTop = (): JSX.Element => {
   const [opacity, setOpacity] = useState(0)
