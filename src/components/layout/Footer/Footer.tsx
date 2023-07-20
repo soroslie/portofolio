@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './Footer.style'
 const Footer = (): JSX.Element => {
   const openNewTab = (url: string): void => {

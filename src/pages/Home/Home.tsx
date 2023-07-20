@@ -1,6 +1,6 @@
 import Projects from '../../components/projects/Projects'
 import ScrollToTop from '../../components/Button/ScrollToTop/ScrollToTop'
-import React from 'react'
+
 import SectionDivider from '../../components/layout/SectionDivider/SectionDivider'
 import Profile from '../../components/Profile/Profile'
 import NewHero from '../../components/Hero/NewHero'

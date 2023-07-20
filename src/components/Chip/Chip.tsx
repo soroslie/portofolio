@@ -1,4 +1,3 @@
-import React from 'react'
 import { Content } from './Chip.style'
 import { FrammerLetter } from '../utils/framer'
 interface Props {

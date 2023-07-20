@@ -1,4 +1,3 @@
-import React from 'react'
 import { MyOrganization } from '../../constants/resume/organization'
 import * as S from '../../pages/Resume/Resume.style'
 const OrganizationExperienceResume = (): JSX.Element => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import Footer from '../../components/layout/Footer/Footer'
 import AchievementResume from '../../components/resume/Achievement'
 import EducationResume from '../../components/resume/Education'

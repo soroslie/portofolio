@@ -1,4 +1,3 @@
-import React from 'react'
 import { MyProjects } from '../../constants/resume/project'
 import { Project } from '../../types/project'
 import ProjectItem from './ProjectItem'

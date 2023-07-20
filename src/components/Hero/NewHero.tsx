@@ -1,4 +1,3 @@
-import React from 'react'
 import Soros from '../../assets/images/soros_transparant_half.png'
 import Cypress from '../../assets/images/skill/cypress.png'
 import ReactTs from '../../assets/images/skill/react-tsx.png'

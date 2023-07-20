@@ -1,4 +1,3 @@
-import React from 'react'
 import Qr from '../../assets/images/vcard-soros.png'
 import * as S from './Profile.style'
 import { MyFrammer } from '../utils/framer'

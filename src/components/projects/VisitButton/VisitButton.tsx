@@ -1,4 +1,3 @@
-import React from 'react'
 import ButtonRightIcon from '../../Button/ButtonRightIcon/ButtonRightIcon'
 import * as S from './VisitButton.style'
 
