@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { MediaScreen } from '../utils/mediaScreen'
+import { MediaScreen } from '../../utils/mediaScreen'
 import { Box } from '@mui/material'
 
 export const Container = styled.div`
@@ -70,7 +70,6 @@ export const ChipSection = styled(motion.div)`
     justify-content: center;
     align-items: center;
     justify-content: center;
-
   }
 `
 

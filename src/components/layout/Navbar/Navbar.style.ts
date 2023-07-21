@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar'
 import ColorPalletes from '../../../constants/color'
 import { Box, Toolbar as MUIToolbar } from '@mui/material'
 import Button from '@mui/material/Button'
-import { MediaScreen } from '../../utils/mediaScreen'
+import { MediaScreen } from '../../../utils/mediaScreen'
 
 export const Appbar = styled(AppBar)`
   background-color: ${ColorPalletes.blackSecondary} !important;

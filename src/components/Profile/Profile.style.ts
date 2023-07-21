@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import ColorPalletes from '../../constants/color'
 import { motion } from 'framer-motion'
-import { MediaScreen } from '../utils/mediaScreen'
+import { MediaScreen } from '../../utils/mediaScreen'
 
 export const Container = styled.div`
   color: ${ColorPalletes.whitePrimary};

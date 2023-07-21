@@ -8,7 +8,7 @@ import ButtonRightIcon from '../Button/ButtonRightIcon/ButtonRightIcon'
 import ColorPalletes from '../../constants/color'
 import KeyboardDoubleArrowDownOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowDownOutlined'
 import Grid from '@mui/material/Unstable_Grid2'
-import { FrammerLetter, FrammerSentences, FrammerSkillPin, MyFrammer } from '../utils/framer'
+import { FrammerLetter, FrammerSentences, FrammerSkillPin, MyFrammer } from '../../utils/framer'
 import { motion } from 'framer-motion'
 import { MainHeading, SubHeading } from '../../constants/content/home'
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { MediaScreen } from '../../components/utils/mediaScreen'
+import { MediaScreen } from '../../utils/mediaScreen'
 
 export const Container = styled.div`
   padding: 20px;

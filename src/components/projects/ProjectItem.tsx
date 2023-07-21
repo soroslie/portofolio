@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2'
 import * as S from './Projects.style'
 import Chip from '../Chip/Chip'
 import VisitButton from './VisitButton/VisitButton'
-import { FrammerChip, FrammerOpacity } from '../utils/framer'
+import { FrammerChip, FrammerOpacity } from '../../utils/framer'
 interface Props {
   data: Project
 }

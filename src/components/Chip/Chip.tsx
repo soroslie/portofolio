@@ -1,5 +1,5 @@
 import { Content } from './Chip.style'
-import { FrammerLetter } from '../utils/framer'
+import { FrammerLetter } from '../../utils/framer'
 interface Props {
   content: string
   color: string

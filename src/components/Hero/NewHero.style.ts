@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import ColorPalletes from '../../constants/color'
 import Grid from '@mui/material/Unstable_Grid2'
 import { motion } from 'framer-motion'
-import { MediaScreen } from '../utils/mediaScreen'
+import { MediaScreen } from '../../utils/mediaScreen'
 
 export const Container = styled.div`
   height: 100%;

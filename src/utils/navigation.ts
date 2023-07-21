@@ -1,4 +1,4 @@
-import { NavbarNavigation } from '../../types/navigation'
+import { NavbarNavigation } from '../types/navigation'
 
 export const MyNavigation: NavbarNavigation[] = [
   {
@@ -12,6 +12,6 @@ export const MyNavigation: NavbarNavigation[] = [
   {
     id: '',
     name: 'RESUME',
-    path: '/resume'
+    path: '/soros-lie/resume'
   }
 ]

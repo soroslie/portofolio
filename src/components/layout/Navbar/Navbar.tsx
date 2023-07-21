@@ -1,5 +1,5 @@
 import React from 'react'
-import { MyNavigation } from '../../utils/navigation'
+import { MyNavigation } from '../../../utils/navigation'
 import { Box } from '@mui/material'
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'

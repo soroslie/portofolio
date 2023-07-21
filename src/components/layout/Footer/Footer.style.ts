@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import ColorPalletes from '../../../constants/color'
-import { MediaScreen } from '../../utils/mediaScreen'
+import { MediaScreen } from '../../../utils/mediaScreen'
 
 export const Container = styled.footer`
   color: ${ColorPalletes.whitePrimary};

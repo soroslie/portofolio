@@ -1,6 +1,6 @@
 import Qr from '../../assets/images/vcard-soros.png'
 import * as S from './Profile.style'
-import { MyFrammer } from '../utils/framer'
+import { MyFrammer } from '../../utils/framer'
 import { SubHeading } from '../../constants/content/home'
 import SocialMedias from '../socialMedias/SocialMedias'
 
