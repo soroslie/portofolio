@@ -84,20 +84,22 @@ const renderTesting = (data: Project): JSX.Element => {
       <S.MobileProjectSection>
         <Grid container>
           <Grid md={9} xs={12}>
-            <S.ProjectText>
-              <S.Header style={{ color: data.color }}>{data.name}</S.Header>
-              <S.SubContent>{data.heading}</S.SubContent>
-              <S.SubContent>{data.description}</S.SubContent>
-              {renderChip(data.skill, data.color)}
-              {data.link && (
-                <VisitButton
-                  onClick={() => {
-                    openProjectUrl(data.link)
-                  }}
-                  color={data.color}
-                />
-              )}
-            </S.ProjectText>
+            <S.Center>
+              <S.ProjectText>
+                <S.Header style={{ color: data.color }}>{data.name}</S.Header>
+                <S.SubContent>{data.heading}</S.SubContent>
+                <S.SubContent>{data.description}</S.SubContent>
+                {renderChip(data.skill, data.color)}
+                {data.link && (
+                  <VisitButton
+                    onClick={() => {
+                      openProjectUrl(data.link)
+                    }}
+                    color={data.color}
+                  />
+                )}
+              </S.ProjectText>
+            </S.Center>
           </Grid>
           <Grid md={3} xs={12}>
             <S.Center>
