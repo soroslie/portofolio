@@ -1,7 +1,10 @@
 export const MyFrammer = {
   visible: {
     opacity: 1,
-    scale: 1
+    scale: 1,
+    transition: {
+      duration: 0.5
+    }
   },
   hidden: { opacity: 0, scale: 0 },
   left: { width: '0%' },
@@ -22,7 +25,10 @@ export const FrammerOpacity = {
     }
   },
   hidden: {
-    opacity: 0
+    opacity: 0,
+    transition: {
+      duration: 1
+    }
   }
 }
 
@@ -31,7 +37,7 @@ export const FrammerChip = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.5,
+      delay: 1,
       staggerChildren: 0.3
     }
   }
@@ -63,4 +69,9 @@ export const FrammerSkillPin = {
   rotate15: { rotate: 15 },
   rotateN16: { rotate: -16 },
   scaleHover: { scale: 1.2 }
+}
+
+export const FrammerProjectText = {
+  show: { opacity: 1, x: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, x: 200 }
 }

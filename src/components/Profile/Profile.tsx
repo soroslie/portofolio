@@ -13,7 +13,6 @@ const Profile = (): JSX.Element => {
         whileInView='visible'
         exit='hidden'
         viewport={{ once: false }}
-        transition={{ duration: 0.5 }}
       >
         <S.Heading>
           Hi, I&apos;m <span>Soros Lie</span>
@@ -27,7 +26,6 @@ const Profile = (): JSX.Element => {
         whileInView='visible'
         exit='hidden'
         viewport={{ once: false }}
-        transition={{ duration: 0.5 }}
       >
         <S.ImageBackground>
           <img src={Qr} alt='qr' />

@@ -4,15 +4,11 @@ import { motion } from 'framer-motion'
 import { Box } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 
-export const WebProjectSection = styled.div`
+export const Container = styled.div`
   margin-bottom: 6rem;
   color: white !important;
 `
 
-export const MobileProjectSection = styled.div`
-  margin-bottom: 6rem;
-  color: white !important;
-`
 export const Header = styled.h1`
   font-weight: 600;
   font-size: 30px;
