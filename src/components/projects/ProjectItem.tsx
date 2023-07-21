@@ -1,7 +1,7 @@
 import { Project } from '../../types/project'
 import { Container } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
-import * as S from './Projects.style'
+import * as S from './ProjectItem.style'
 import Chip from '../Chip/Chip'
 import VisitButton from './VisitButton/VisitButton'
 import { FrammerChip, FrammerOpacity } from '../../utils/framer'
@@ -41,7 +41,7 @@ const renderMobile = (data: Project): JSX.Element => {
     <Container>
       <S.MobileProjectSection>
         <Grid container>
-          <Grid md={6}>
+          <S.MobileProjectText md={6}>
             <S.ProjectText>
               <S.Header style={{ color: data.color }}>{data.name}</S.Header>
               <S.SubContent>{data.heading}</S.SubContent>
@@ -57,7 +57,7 @@ const renderMobile = (data: Project): JSX.Element => {
                 />
               )}
             </S.ProjectText>
-          </Grid>
+          </S.MobileProjectText>
           <Grid md={6}>
             <S.ImageSection>
               <S.MobileProjectImage

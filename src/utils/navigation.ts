@@ -12,6 +12,6 @@ export const MyNavigation: NavbarNavigation[] = [
   {
     id: '',
     name: 'RESUME',
-    path: '/soros-lie/resume'
+    path: '/portofolio/resume'
   }
 ]

@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText'
 import Typography from '@mui/material/Typography'
 import MenuIcon from '@mui/icons-material/Menu'
 import * as S from './Navbar.style'
-import ColorPalletes from '../../../constants/color'
+import ColorPalletes from '../../../utils/color'
 import { useNavigate } from 'react-router-dom'
 interface Props {
   window?: () => Window

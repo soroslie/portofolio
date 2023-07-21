@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ColorPalletes from '../../../constants/color'
+import ColorPalletes from '../../../utils/color'
 import { MediaScreen } from '../../../utils/mediaScreen'
 
 export const Container = styled.footer`

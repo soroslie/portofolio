@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import AppBar from '@mui/material/AppBar'
-import ColorPalletes from '../../../constants/color'
+import ColorPalletes from '../../../utils/color'
 import { Box, Toolbar as MUIToolbar } from '@mui/material'
 import Button from '@mui/material/Button'
 import { MediaScreen } from '../../../utils/mediaScreen'

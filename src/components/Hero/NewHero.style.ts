@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ColorPalletes from '../../constants/color'
+import ColorPalletes from '../../utils/color'
 import Grid from '@mui/material/Unstable_Grid2'
 import { motion } from 'framer-motion'
 import { MediaScreen } from '../../utils/mediaScreen'

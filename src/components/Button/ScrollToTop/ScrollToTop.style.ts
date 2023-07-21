@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import NorthOutlinedIcon from '@mui/icons-material/NorthOutlined'
-import ColorPalletes from '../../../constants/color'
+import ColorPalletes from '../../../utils/color'
 import { MediaScreen } from '../../../utils/mediaScreen'
 
 const bounce = keyframes`

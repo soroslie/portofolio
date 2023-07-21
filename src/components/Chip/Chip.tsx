@@ -7,7 +7,7 @@ interface Props {
 
 const Chip = ({ content, color }: Props): JSX.Element => {
   return (
-    <Content variants={FrammerLetter} color={color}>
+    <Content variants={FrammerLetter} style={{ color }}>
       {content}
     </Content>
   )
