@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://soroslie.github.io/soros-portofolio",
+  "homepage": "https://soroslie.github.io/soros-lie",
   "scripts": {
     "start": "vite",
     "dev": "vite",
