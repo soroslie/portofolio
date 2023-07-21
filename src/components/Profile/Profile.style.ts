@@ -11,6 +11,9 @@ export const Container = styled.div`
   @media only screen and (max-width: ${MediaScreen.laptop}) {
     margin: 0 4rem;
   }
+  @media only screen and (max-width: ${MediaScreen.mobile}) {
+    margin: 0 1rem;
+  }
 `
 
 export const LeftSection = styled(motion.div)`
@@ -36,7 +39,7 @@ export const RightSection = styled(motion.div)`
   }
 `
 
-export const MainContent = styled.h1`
+export const Heading = styled.h1`
   width: fit-content;
   overflow: hidden;
   white-space: nowrap;
@@ -45,6 +48,9 @@ export const MainContent = styled.h1`
   margin-bottom: 1rem;
   span {
     color: ${ColorPalletes.greenPrimary};
+  }
+  @media only screen and (max-width: ${MediaScreen.mobile}) {
+    font-size: 30px;
   }
 `
 export const SubContent = styled.h1`

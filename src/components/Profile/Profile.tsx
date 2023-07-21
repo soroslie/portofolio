@@ -15,9 +15,9 @@ const Profile = (): JSX.Element => {
         viewport={{ once: false }}
         transition={{ duration: 0.5 }}
       >
-        <S.MainContent>
+        <S.Heading>
           Hi, I&apos;m <span>Soros Lie</span>
-        </S.MainContent>
+        </S.Heading>
         <S.SubContent>{SubHeading[2]}</S.SubContent>
         <SocialMedias />
       </S.LeftSection>
