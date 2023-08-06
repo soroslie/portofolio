@@ -40,10 +40,9 @@ export const Content = styled.div`
 
 export const Heading = styled.h1`
   margin-top: 1.25rem;
-  margin-bottom: 1rem;
-
   font-weight: bold;
   font-size: 24px;
+  text-transform: uppercase;
 `
 
 export const SubHeading = styled.h2`
@@ -51,12 +50,17 @@ export const SubHeading = styled.h2`
   font-size: 18px;
 `
 
-export const UnorderedList = styled.ul``
+export const UnorderedList = styled.ul`
+  margin-left: 2rem;
+`
 
 export const ListItem = styled.li`
-  margin-left: 0.75rem;
+  list-style: disc;
 `
 
 export const Space = styled.div`
   margin-bottom: 0.75rem;
+`
+export const MarginatedContainer = styled.div`
+  margin-left: 0.5rem;
 `

@@ -8,40 +8,26 @@ import ShopeeImage from '../../assets/images/shopee.png'
 
 export const MyProjects: Project[] = [
   {
-    name: 'Tiarapot Pro',
+    name: 'Shopee Marketplace Order Regression Testing',
     resume_description:
-      'Tiarapot is a website to help Polytron promote their new product which is Tiarapot Pro. This website features community recipes so the members could share recipes which have been approved by the Admin from the content management system panel. Most of the website’s banner and text are editable because everything was controlled by the admin panel. It is developed using VueJS, NodeJS Express, MySQL',
+      'Testing some features and functionalities from Shopee App and Website specially focusing on the seamless flow of Shopee order flow (android, iOS, website and mobile web)',
     description:
-      'Tiarapot is a website to help Polytron promote their new product which is Tiarapot Pro. This website features community recipes so the members could share recipes which have been approved by the Admin from the content management system panel. Most of the website’s banner and text are editable because everything was controlled by the admin panel',
-    type: 'Website',
-    link: 'https://tiarapot.com',
-    image: TiarapotImage,
-    skill: ['Vue', 'Node', 'MySQL', 'redis'],
-    color: '#a22c2c'
+      'Testing all the features and functionalities from Shopee Pay App and Shopee Pay inside Shopee App. Handling Thailand, Vietnam, Brazil and Indonesia regions (android)',
+    type: 'Testing',
+    image: ShopeeImage,
+    skill: ['regression testing'],
+    color: '#EE4D2D'
   },
   {
-    name: 'Polytron Employee Self Service',
-    heading: 'Polytron Human Resource Data Approval',
+    name: 'Shopee Pay Regression Testing',
     resume_description:
-      'Ex-Backend Developer and Database Administrator, Polytron’s Employee Self Service is a website used by all Polytron employees to request change or fix about their education, biodata, family information, address and emergency contact. It is divided into 2 parts: the user (employees) part and the admin panel managed by the human resource department who approves/rejects the user’s document request changes. It is developed using NodeJS Express, Redis, Embedded Javascript, and MySQL.',
+      'Testing all the features and functionalities from Shopee Pay App and Shopee Pay inside Shopee App. Handling Thailand, Vietnam, Brazil and Indonesia regions (android)',
     description:
-      'Ex-Backend Developer and Database Administrator, Polytron’s Employee Self Service is a website used by all Polytron employees to request change or fix about their education, biodata, family information, address and emergency contact. It is divided into 2 parts: the user (employees) part and the admin panel managed by the human resource department who approves/rejects the user’s document request changes',
-    type: 'Website',
-    link: 'https://ess.polytron.co.id',
-    image: EssImage,
-    skill: ['EJS', 'Node', 'MySQL', 'redis', 'md5'],
-    color: '#fb3c35'
-  },
-  {
-    name: 'V-CARD to QR Generator',
-    resume_description:
-      'Ex-Fullstack Developer, V-CARD to QR Generator is a website to generate an excel file that contains employee information and a QR Code which contains V-CARD so the employee contact data could easily be shared and collected. Developed using NodeJS Express, Embedded Javascript and MySQL.',
-    description:
-      'Fullstack Developer, V-CARD to QR Generator is a website to generate an excel file that contains employee information and a QR Code which contains V-CARD so the employee contact data could easily be shared and collected',
-    type: 'Website',
-    image: VcardImage,
-    skill: ['EJS', 'Node', 'MySQL'],
-    color: '#4369d7'
+      'Testing all the features and functionalities from Shopee Pay App and Shopee Pay inside Shopee App. Handling Thailand, Vietnam, Brazil and Indonesia regions (android)',
+    type: 'Testing',
+    image: ShopeePayImage,
+    skill: ['regression testing'],
+    color: '#EE4D2D'
   },
   {
     name: 'MyPolytron',
@@ -57,25 +43,39 @@ export const MyProjects: Project[] = [
     color: '#ff0006'
   },
   {
-    name: 'Shopee Pay Regression Testing',
+    name: 'V-CARD to QR Generator',
     resume_description:
-      'Testing all the features and functionalities from Shopee Pay App and Shopee Pay inside Shopee App. Handling Thailand, Vietnam, Brazil and Indonesia regions (android)',
+      'Ex-Fullstack Developer, V-CARD to QR Generator is a website to generate an excel file that contains employee information and a QR Code which contains V-CARD so the employee contact data could easily be shared and collected. Developed using NodeJS Express, Embedded Javascript and MySQL.',
     description:
-      'Testing all the features and functionalities from Shopee Pay App and Shopee Pay inside Shopee App. Handling Thailand, Vietnam, Brazil and Indonesia regions (android)',
-    type: 'Testing',
-    image: ShopeePayImage,
-    skill: ['regression testing'],
-    color: '#EE4D2D'
+      'Fullstack Developer, V-CARD to QR Generator is a website to generate an excel file that contains employee information and a QR Code which contains V-CARD so the employee contact data could easily be shared and collected',
+    type: 'Website',
+    image: VcardImage,
+    skill: ['EJS', 'Node', 'MySQL'],
+    color: '#4369d7'
   },
   {
-    name: 'Shopee Marketplace Order Regression Testing',
+    name: 'Polytron Employee Self Service',
+    heading: 'Polytron Human Resource Data Approval',
     resume_description:
-      'Testing some features and functionalities from Shopee App and Website specially focusing on the seamless flow of Shopee order flow (android, iOS, website and mobile web)',
+      'Ex-Backend Developer and Database Administrator, Polytron’s Employee Self Service is a website used by all Polytron employees to request change or fix about their education, biodata, family information, address and emergency contact. It is divided into 2 parts: the user (employees) part and the admin panel managed by the human resource department who approves/rejects the user’s document request changes. It is developed using NodeJS Express, Redis, Embedded Javascript, and MySQL.',
     description:
-      'Testing all the features and functionalities from Shopee Pay App and Shopee Pay inside Shopee App. Handling Thailand, Vietnam, Brazil and Indonesia regions (android)',
-    type: 'Testing',
-    image: ShopeeImage,
-    skill: ['regression testing'],
-    color: '#EE4D2D'
+      'Ex-Backend Developer and Database Administrator, Polytron’s Employee Self Service is a website used by all Polytron employees to request change or fix about their education, biodata, family information, address and emergency contact. It is divided into 2 parts: the user (employees) part and the admin panel managed by the human resource department who approves/rejects the user’s document request changes',
+    type: 'Website',
+    link: 'https://ess.polytron.co.id',
+    image: EssImage,
+    skill: ['EJS', 'Node', 'MySQL', 'redis', 'md5'],
+    color: '#fb3c35'
+  },
+  {
+    name: 'Tiarapot Pro',
+    resume_description:
+      'Tiarapot is a website to help Polytron promote their new product which is Tiarapot Pro. This website features community recipes so the members could share recipes which have been approved by the Admin from the content management system panel. Most of the website’s banner and text are editable because everything was controlled by the admin panel. It is developed using VueJS, NodeJS Express, MySQL',
+    description:
+      'Tiarapot is a website to help Polytron promote their new product which is Tiarapot Pro. This website features community recipes so the members could share recipes which have been approved by the Admin from the content management system panel. Most of the website’s banner and text are editable because everything was controlled by the admin panel',
+    type: 'Website',
+    link: 'https://tiarapot.com',
+    image: TiarapotImage,
+    skill: ['Vue', 'Node', 'MySQL', 'redis'],
+    color: '#a22c2c'
   }
 ]

@@ -4,20 +4,15 @@ import EducationResume from '../../components/resume/Education'
 import OrganizationExperienceResume from '../../components/resume/OrganizationExperience'
 import ProjectResume from '../../components/resume/Project'
 import SkillResume from '../../components/resume/Skill'
-import WorkExperienceResume from '../../components/resume/WorkExperience'
+import Summary from '../../components/resume/Summary'
+import WorkExperienceResume from '../../components/resume/WorkExperience/WorkExperience'
 import * as S from './Resume.style'
 const ResumePage = (): JSX.Element => {
   return (
     <S.Container>
       <S.Paper>
         <S.Content>
-          <S.Heading>Summary</S.Heading>
-          <p>
-            Fresh Graduate majoring in Mobile Application and Technology. Eager to learn with more
-            than 1 year experience in mobile and web development. Experienced in NodeJS Express and
-            Flutter. Looking for an opportunity to apply my technical skills, knowledge, and
-            experience.
-          </p>
+          <Summary />
           <WorkExperienceResume />
           <ProjectResume />
           <SkillResume />

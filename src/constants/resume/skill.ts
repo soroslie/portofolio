@@ -13,12 +13,14 @@ export const MySkill: Skill[] = [
       'Embedded Javascript',
       'ReactJS/TS',
       'Redis',
-      'REST API',
       'MySQL Server',
-      'Git',
       'Go Gin',
       'Tailwind'
     ]
   },
-  { name: 'Tools', list: ['Figma', 'Adobe XD', 'Jira Software', 'Postman'] }
+  { name: 'Tools', list: ['Figma', 'Adobe XD', 'Jira', 'Postman', 'Git'] },
+  {
+    name: 'Testing',
+    list: ['Cypress', 'JEST']
+  }
 ]
