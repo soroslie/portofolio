@@ -8,7 +8,6 @@ import SectionDivider from '../layout/SectionDivider/SectionDivider'
 const Profile = (): JSX.Element => {
   return (
     <>
-      {' '}
       <S.Container id='my-profile'>
         <S.LeftSection
           variants={MyFrammer}

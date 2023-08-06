@@ -6,8 +6,9 @@ import { MediaScreen } from '../../utils/mediaScreen'
 export const Container = styled.div`
   color: ${ColorPalletes.whitePrimary};
   display: flex;
-  padding: 1rem 1rem 4rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   scroll-margin: 150px;
+  margin: 2rem 0rem;
   @media only screen and (max-width: ${MediaScreen.laptop}) {
     margin: 0 4rem;
   }

@@ -8,16 +8,18 @@ interface Props {
 
 const VisitButton = ({ onClick, color }: Props): JSX.Element => {
   return (
-    <ButtonRightIcon
-      onClick={() => {
-        onClick()
-      }}
-      content='Visit'
-      color={color}
-      animateTo='right'
-    >
-      <S.Icon />
-    </ButtonRightIcon>
+    <S.Container>
+      <ButtonRightIcon
+        onClick={() => {
+          onClick()
+        }}
+        content='Visit'
+        color={color}
+        animateTo='right'
+      >
+        <S.Icon />
+      </ButtonRightIcon>
+    </S.Container>
   )
 }
 
