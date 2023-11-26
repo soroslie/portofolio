@@ -12,8 +12,13 @@ const SkillResume = (): JSX.Element => {
             return (
               <S.ListItem key={data.name}>
                 <span>{data.name}: </span>
-                {data.list.map((item) => {
-                  return <span key={item}>{item}, </span>
+                {data.list.map((item, index) => {
+                  return (
+                    <span key={item}>
+                      {item}
+                      {index < data.list.length - 1 ? ', ' : ''}
+                    </span>
+                  )
                 })}
               </S.ListItem>
             )

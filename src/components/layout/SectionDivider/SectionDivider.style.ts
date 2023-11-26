@@ -7,6 +7,8 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;
+  margin-top: 2rem;
+
   border-image: linear-gradient(
       to right,
       ${ColorPalletes.whitePrimary},

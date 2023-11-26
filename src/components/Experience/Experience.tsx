@@ -5,20 +5,19 @@ import ExperienceItem from './ExperienceItem/ExperienceItem'
 
 const Experience = (): JSX.Element => {
   return (
-    <div style={{ overflowX: 'hidden' }}>
-      <S.Container
-        style={{
-          display: 'flex',
-          flexDirection: 'row'
-        }}
-        drag='x' // Enable horizontal drag
-        dragConstraints={{ left: 10, right: 10 }} // Set drag constraints
-        dragElastic={0.8} // Add elastic effect to drag
-      >
-        {MyExperience.map((experience, index) => (
-          <ExperienceItem key={index} data={experience} />
-        ))}
-      </S.Container>
+    <div>
+      <div style={{ overflowX: 'auto' }}>
+        <S.Container
+          style={{
+            display: 'flex',
+            flexDirection: 'row'
+          }}
+        >
+          {MyExperience.map((experience, index) => (
+            <ExperienceItem key={index} data={experience} />
+          ))}
+        </S.Container>
+      </div>
       <SectionDivider />
     </div>
   )
