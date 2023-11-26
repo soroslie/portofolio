@@ -11,7 +11,10 @@ export const MyWorkExperience: WorkExperience[] = [
         info: [
           'Testing some features and functionalities from Shopee App and Website specially focusing on the seamless flow of Shopee order creation and return-refund flow',
           'Android & IOS UI Automation testing for user behavior tracking using internal tools',
-          'Maintaining personal automation script for mobile and desktop web testing'
+          'Maintaining personal automation script for mobile and desktop web testing',
+          'Supporting live app regression for certain region',
+          'Smoke and regression testing for data center migration',
+          'Test Case  Preparation for feature testing'
         ]
       },
       {

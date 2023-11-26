@@ -21,6 +21,6 @@ export const MySkill: Skill[] = [
   { name: 'Tools', list: ['Figma', 'Adobe XD', 'Jira', 'Postman', 'Git'] },
   {
     name: 'Testing',
-    list: ['Cypress', 'JEST']
+    list: ['Cypress', 'JEST', 'Postman Test', 'Playwright', 'Chrome Selenium IDE']
   }
 ]
