@@ -10,7 +10,7 @@ export const Container = styled.div`
   scroll-margin: 150px;
   margin: 2rem 0rem;
   @media only screen and (max-width: ${MediaScreen.laptop}) {
-    margin: 0 4rem;
+    margin: 4rem 4rem;
   }
   @media only screen and (max-width: ${MediaScreen.mobile}) {
     margin: 0 1rem;
