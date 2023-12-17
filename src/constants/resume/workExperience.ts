@@ -9,12 +9,14 @@ export const MyWorkExperience: WorkExperience[] = [
         duration: 'Jul 2023 - Present',
         location: 'Jakarta, Indonesia',
         info: [
-          'Testing some features and functionalities from Shopee App and Website specially focusing on the seamless flow of Shopee order creation and return-refund flow',
+          'Maintaining and running test for some features and functionalities from Shopee App and Website focusing on Shopee order creation and return-refund flow',
           'Android & IOS UI Automation testing for user behavior tracking using internal tools',
           'Maintaining personal automation script for mobile and desktop web testing',
           'Supporting live app regression for certain region',
           'Smoke and regression testing for data center migration',
-          'Test Case  Preparation for feature testing'
+          'Test Case  Preparation for feature testing',
+          'Preparing and running test cases for feature testing',
+          'Preparing and running urgent test cases for live issues'
         ]
       },
       {
@@ -23,7 +25,7 @@ export const MyWorkExperience: WorkExperience[] = [
         location: 'Jakarta, Indonesia',
         info: [
           'Part of Shopee Marketplace Order division  - Order Regression subdivision',
-          'Testing some features and functionalities from Shopee App and Website specially focusing on the seamless flow of Shopee order creation and return-refund flow'
+          'Running regression testing for some features and functionalities from Shopee App and Website focusing on Shopee order creation and return-refund flow'
         ]
       },
       {
@@ -32,7 +34,7 @@ export const MyWorkExperience: WorkExperience[] = [
         location: 'Jakarta, Indonesia',
         info: [
           'Part of Shopee Indonesia Payment Processing (SIPP) division - Payment Processing subdivision',
-          'Handling Thailand, Vietnam, Brazil and Indonesia Shopee Pay'
+          'Handling Thailand, Vietnam, Brazil and Indonesia Shopee Pay App regression testing'
         ]
       },
       {
