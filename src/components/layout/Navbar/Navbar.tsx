@@ -18,7 +18,7 @@ interface Props {
 
 const Navbar = ({ window }: Props): JSX.Element => {
   const downloadPdf = () => {
-    const pdfPath = '/src/assets/Soros-Lie-CV.pdf'
+    const pdfPath = '/Soros-Lie-CV.pdf'
     const link = document.createElement('a')
     link.href = pdfPath
     link.download = 'soros-resume.pdf'
