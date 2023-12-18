@@ -19,6 +19,17 @@ interface Props {
 
 const Navbar = ({ window }: Props): JSX.Element => {
   const navigate = useNavigate()
+
+  const downloadPdf = () => {
+    const pdfPath = '/src/assets/Soros-Lie-CV.pdf'
+    const link = document.createElement('a')
+    link.href = pdfPath
+    link.download = 'soros-resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const handleClick = (id?: string, path?: string): void => {
     setMobileOpen(false)
     if (id) {
@@ -26,7 +37,7 @@ const Navbar = ({ window }: Props): JSX.Element => {
       section?.scrollIntoView({ block: 'start', behavior: 'smooth' })
     }
     if (path) {
-      navigate(path)
+      downloadPdf()
     }
   }
 
