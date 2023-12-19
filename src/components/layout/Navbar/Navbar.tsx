@@ -12,13 +12,14 @@ import Typography from '@mui/material/Typography'
 import MenuIcon from '@mui/icons-material/Menu'
 import * as S from './Navbar.style'
 import ColorPalletes from '../../../utils/color'
+import resume from '/Soros-Lie-CV.pdf'
 interface Props {
   window?: () => Window
 }
 
 const Navbar = ({ window }: Props): JSX.Element => {
   const downloadPdf = () => {
-    const pdfPath = '/Soros-Lie-CV.pdf'
+    const pdfPath = resume
     const a = document.createElement('a')
     a.href = pdfPath
     a.target = '_blank'
