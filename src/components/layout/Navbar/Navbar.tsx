@@ -21,7 +21,6 @@ const Navbar = ({ window }: Props): JSX.Element => {
     const pdfPath = '/Soros-Lie-CV.pdf'
     const link = document.createElement('a')
     link.href = pdfPath
-    link.download = 'soros-resume.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
