@@ -21,6 +21,7 @@ const Navbar = ({ window }: Props): JSX.Element => {
     const pdfPath = '/Soros-Lie-CV.pdf'
     const a = document.createElement('a')
     a.href = pdfPath
+    a.target = '_blank'
     a.download = pdfPath.split('/').pop() as string
     document.body.appendChild(a)
     a.click()
