@@ -19,11 +19,13 @@ interface Props {
 const Navbar = ({ window }: Props): JSX.Element => {
   const downloadPdf = () => {
     const pdfPath = '/Soros-Lie-CV.pdf'
-    const link = document.createElement('a')
-    link.href = pdfPath
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    const a = document.createElement('a')
+    a.href = pdfPath
+    a.download = pdfPath.split('/').pop()
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+  
   }
 
   const handleClick = (id?: string, path?: string): void => {
