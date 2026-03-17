@@ -1,4 +1,3 @@
-import Projects from '../../components/projects/Projects'
 import ScrollToTop from '../../components/Button/ScrollToTop/ScrollToTop'
 import Profile from '../../components/Profile/Profile'
 import NewHero from '../../components/Hero/Hero'
