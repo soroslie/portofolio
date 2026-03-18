@@ -47,7 +47,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ title = 'My Skills' }) => {
 
                 return (
                   <Box key={category.name} sx={styles.cardWrapper}>
-                    <Paper elevation={8} sx={styles.paperStyles(categoryColor, lighterBgColor)}>
+                    <Paper elevation={8} sx={styles.paperStyles(categoryColor)}>
                       <Box sx={styles.topGradient(categoryColor)} />
 
                       {/* Centered Icon */}
@@ -81,7 +81,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ title = 'My Skills' }) => {
 
                 return (
                   <Box key={category.name} sx={styles.cardWrapper}>
-                    <Paper elevation={8} sx={styles.paperStyles(categoryColor, lighterBgColor)}>
+                    <Paper elevation={8} sx={styles.paperStyles(categoryColor)}>
                       <Box sx={styles.topGradient(categoryColor)} />
 
                       {/* Centered Icon */}
@@ -118,7 +118,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ title = 'My Skills' }) => {
                 <Paper
                   key={category.name}
                   elevation={8}
-                  sx={styles.mobilePaperStyles(categoryColor, lighterBgColor)}
+                  sx={styles.mobilePaperStyles()}
                 >
                   <Box sx={styles.topGradient(categoryColor)} />
 
