@@ -312,7 +312,7 @@ export const StatusDot = styled(FiberManualRecordIcon, {
   }
 }))
 
-export const ProjectName = styled(Typography)(({ theme }) => ({
+export const ProjectName = styled(Typography)(() => ({
   fontSize: '0.8rem',
   lineHeight: 1.4,
   flex: 1,
