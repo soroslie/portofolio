@@ -19,7 +19,7 @@ export const MainHeading: string[] = [
 ]
 
 export const SubHeading: string[] = [
-  'QA beginner, I am passionate about quality assurance and committed to learning and growing in this field. With a meticulous eye for detail, I strive to contribute to delivering top-notch products through thorough testing, bug identification, and continuous improvement',
-  'Dedicated software engineering learner, I embrace challenges and constantly seek opportunities to expand my knowledge. Eager to contribute to innovative projects, I am adaptable, curious, and committed to continuous growth in the ever-evolving field of software engineering',
-  'I am an experienced web developer with expertise in web automation testing. I deliver high-quality projects on time, prioritizing efficient code, user-friendly experiences, and effective collaboration. I stay updated with industry trends, integrating cutting-edge technologies for successful web solutions'
+  'Dedicated software engineering learner embracing challenges to expand my knowledge. Adaptable and curious, eager to contribute to innovative projects while pursuing continuous growth.',
+  'Passionate QA with a meticulous eye for detail, committed to delivering top-notch products through thorough testing and continuous improvement.',
+  'Automation tester with developer experience, skilled in building robust test frameworks and delivering high-quality web solutions. I ensure product reliability through comprehensive automation, clean code practices, and seamless collaboration—staying current with industry trends to drive continuous improvement'
 ]

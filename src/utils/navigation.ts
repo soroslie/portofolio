@@ -17,6 +17,10 @@ export const MyNavigation: NavbarNavigation[] = [
     id: 'my-skill',
     name: 'SKILLS'
   },
+    {
+    id: 'my-contact',
+    name: 'CONTACT'
+  },
   {
     id: '',
     name: 'RESUME',

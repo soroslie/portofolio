@@ -6,7 +6,7 @@ const Footer = (): JSX.Element => {
 
   return (
     <S.Container>
-      <S.Info>For everything else, you can mail me at</S.Info>
+      {/* <S.Info>For everything else, you can mail me at</S.Info>
       <S.MailContainer>
         <S.Mail
           onClick={() => {
@@ -15,7 +15,7 @@ const Footer = (): JSX.Element => {
         >
           soroslie75@gmail.com
         </S.Mail>
-      </S.MailContainer>
+      </S.MailContainer> */}
       <S.Copyright>© {new Date().getFullYear()} Soros Lie All rights reserved.</S.Copyright>
     </S.Container>
   )

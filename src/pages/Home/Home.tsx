@@ -2,7 +2,8 @@ import ScrollToTop from '../../components/Button/ScrollToTop/ScrollToTop'
 import Profile from '../../components/Profile/Profile'
 import NewHero from '../../components/Hero/Hero'
 import SkillSection from '../../components/SkillSection/SkillSection'
-import ExperienceMatrix from '../../components/Experience/ExperienceMatrix'
+import ExperienceMatrix from '../../components/ExperienceSection/ExperienceMatrix'
+import ContactSection from '../../components/ContactSection/ContactSection'
 const HomePage = (): JSX.Element => {
   return (
     <>
@@ -11,6 +12,7 @@ const HomePage = (): JSX.Element => {
       <ExperienceMatrix />
       {/* <Projects /> */}
       <SkillSection />
+      <ContactSection />
       <ScrollToTop />
     </>
   )
