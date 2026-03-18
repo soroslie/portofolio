@@ -48,7 +48,7 @@ export const cardWrapper: SxProps<Theme> = {
   width: '50%'
 }
 
-export const paperStyles = (categoryColor: string, lighterBgColor: string): SxProps<Theme> => ({
+export const paperStyles = (categoryColor: string): SxProps<Theme> => ({
   p: 3,
   minHeight: 280,
   bgcolor: '#0a0a0a',
@@ -113,7 +113,7 @@ export const mobileContainer: SxProps<Theme> = {
   gap: 3
 }
 
-export const mobilePaperStyles = (categoryColor: string, lighterBgColor: string): SxProps<Theme> => ({
+export const mobilePaperStyles = (): SxProps<Theme> => ({
   p: 3,
   minHeight: 260,
   bgcolor: '#0a0a0a',
