@@ -9,6 +9,10 @@ export const MyNavigation: NavbarNavigation[] = [
   //   id: 'my-project',
   //   name: 'PROJECTS'
   // },
+    {
+    id: 'my-projects',
+    name: 'PROJECTS'
+  },
   {
     id: 'my-skill',
     name: 'SKILLS'

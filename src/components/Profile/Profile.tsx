@@ -3,7 +3,6 @@ import * as S from './Profile.style'
 import { MyFrammer } from '../../utils/framer'
 import { SubHeading } from '../../constants/content/home'
 import SocialMedias from '../socialMedias/SocialMedias'
-import SectionDivider from '../layout/SectionDivider/SectionDivider'
 
 const Profile = (): JSX.Element => {
   return (
@@ -34,7 +33,6 @@ const Profile = (): JSX.Element => {
           </S.ImageBackground>
         </S.RightSection>
       </S.Container>
-      <SectionDivider />
     </>
   )
 }
