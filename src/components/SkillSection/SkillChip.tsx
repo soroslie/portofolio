@@ -47,7 +47,7 @@ const SkillChip: React.FC<SkillChipProps> = ({ skill, rating }) => {
         transition: 'all 0.2s ease',
         '& .MuiChip-label': {
           px: 1.5,
-          py: 0.5
+          py: 0.3
         },
         '&:hover': {
           bgcolor: 'rgba(255, 255, 255, 0.08)',

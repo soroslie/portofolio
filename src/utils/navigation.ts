@@ -5,9 +5,13 @@ export const MyNavigation: NavbarNavigation[] = [
     id: 'my-profile',
     name: 'PROFILE'
   },
+  // {
+  //   id: 'my-project',
+  //   name: 'PROJECTS'
+  // },
   {
-    id: 'my-project',
-    name: 'PROJECTS'
+    id: 'my-skill',
+    name: 'SKILLS'
   },
   {
     id: '',
