@@ -18,11 +18,6 @@ const NewHero = (): JSX.Element => {
     }
   }
 
-  const handleQRClick = () => {
-    console.log('QR code clicked')
-    // Add your QR code logic here
-  }
-
   return (
     <S.Container>
       <S.Grid>
