@@ -1,4 +1,3 @@
-import ScrollToTop from '../../components/Button/ScrollToTop/ScrollToTop'
 import Profile from '../../components/Profile/Profile'
 import NewHero from '../../components/Hero/Hero'
 import SkillSection from '../../components/SkillSection/SkillSection'
@@ -13,7 +12,6 @@ const HomePage = (): JSX.Element => {
       {/* <Projects /> */}
       <SkillSection />
       <ContactSection />
-      <ScrollToTop />
     </>
   )
 }

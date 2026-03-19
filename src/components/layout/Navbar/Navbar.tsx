@@ -1,125 +1,83 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { MyNavigation } from '../../../utils/navigation'
-import { Box } from '@mui/material'
-import Divider from '@mui/material/Divider'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText'
-import Typography from '@mui/material/Typography'
-import MenuIcon from '@mui/icons-material/Menu'
 import * as S from './Navbar.style'
-import ColorPalletes from '../../../utils/color'
 import resume from '/Soros-Lie-CV.pdf'
-interface Props {
-  window?: () => Window
+import PersonIcon from '@mui/icons-material/Person'
+import CodeIcon from '@mui/icons-material/Code'
+import BuildIcon from '@mui/icons-material/Build'
+import ContactMailIcon from '@mui/icons-material/ContactMail'
+import DescriptionIcon from '@mui/icons-material/Description'
+
+// Map icons to navigation items
+const iconMap: Record<string, React.ElementType> = {
+  'PROFILE': PersonIcon,
+  'PROJECTS': CodeIcon,
+  'SKILLS': BuildIcon,
+  'CONTACT': ContactMailIcon,
+  'RESUME': DescriptionIcon
 }
 
-const Navbar = ({ window }: Props): JSX.Element => {
+const Navbar = (): JSX.Element => {
+  const [scrolled, setScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   const downloadPdf = () => {
-    const pdfPath = resume
     const a = document.createElement('a')
-    a.href = pdfPath
+    a.href = resume
     a.target = '_blank'
-    a.download = pdfPath.split('/').pop() as string
+    a.download = 'Soros-Lie-CV.pdf'
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
   }
 
   const handleClick = (id?: string, path?: string): void => {
-    setMobileOpen(false)
     if (id) {
-      const section = document.getElementById(id)
-      section?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     }
     if (path) {
       downloadPdf()
     }
   }
 
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-
-  const handleDrawerToggle = (): void => {
-    setMobileOpen(!mobileOpen)
-  }
-
-  const drawer = (
-    <S.MobileAppBar onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography color={ColorPalletes.greenPrimary} variant='h6' sx={{ m: 4 }}>
-        Soros Lie
-      </Typography>
-      <Divider />
-      <List>
-        {MyNavigation.map((item) => (
-          <ListItem
-            key={item.id}
-            disablePadding
-            onClick={() => {
-              handleClick(item.id, item.path)
-            }}
-          >
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </S.MobileAppBar>
-  )
-  const container = window !== undefined ? () => window().document.body : undefined
-
   return (
-    <div>
-      <S.Appbar>
-        <S.Toolbar>
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
-            onClick={handleDrawerToggle}
-            sx={{ mr: 'auto', display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {MyNavigation.map((item) => (
+    <S.NavbarContainer $isMobile={isMobile}>
+      <S.FloatingContainer $scrolled={scrolled} $isMobile={isMobile}>
+        <S.NavButtonsContainer $isMobile={isMobile}>
+          {MyNavigation.map((item) => {
+            const IconComponent = iconMap[item.name]
+            return (
               <S.NavButton
                 key={item.id}
-                onClick={() => {
-                  handleClick(item.id, item.path)
-                }}
+                onClick={() => handleClick(item.id, item.path)}
+                $isMobile={isMobile}
               >
-                {item.name}
+                {IconComponent && <IconComponent className="nav-icon" />}
+                <span className="nav-text">{item.name}</span>
               </S.NavButton>
-            ))}
-          </Box>
-        </S.Toolbar>
-      </S.Appbar>
-      <Box component='nav'>
-        <Drawer
-          container={container}
-          variant='temporary'
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: 350,
-              backgroundColor: ColorPalletes.blackSecondary
-            }
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-    </div>
+            )
+          })}
+        </S.NavButtonsContainer>
+      </S.FloatingContainer>
+    </S.NavbarContainer>
   )
 }
 

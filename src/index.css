@@ -1,5 +1,10 @@
-html {
-  background-color: #0e1111;
+html, body, #root, .app {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+  background-color: #000000; /* Match your theme */
 }
 
 blockquote,
