@@ -1,115 +1,103 @@
 import * as S from './Hero.style'
+import { motion } from 'framer-motion' // Add this import
 import SorosImage from '../../assets/images/soros_transparant_half.png'
 import SocialIcons from './Socialicon'
 
 const NewHero = (): JSX.Element => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  }
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  // Circle animation variants - FIXED
-  const circleVariants = {
-    initial: { 
-      scale: 1,
-      boxShadow: `
-        0 20px 50px rgba(0, 0, 0, 0.8),
-        0 0 0 2px rgba(255, 255, 255, 0.3),
-        0 0 0 5px rgba(255, 255, 255, 0.1),
-        inset 0 0 30px rgba(255, 255, 255, 0.2)
-      `
-    },
-    hover: { 
-      scale: 1.1,
-      boxShadow: `
-        0 30px 70px rgba(0, 0, 0, 0.9),
-        0 0 0 3px rgba(255, 255, 255, 0.5),
-        0 0 0 7px rgba(255, 255, 255, 0.2),
-        inset 0 0 50px rgba(255, 255, 255, 0.3)
-      `,
-      transition: { 
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
-  }
-
-  const imageVariants = {
-    initial: { 
-      scale: 1,
-      filter: 'drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6))'
-    },
-    hover: { 
-      scale: 1.05,
-      filter: 'drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))',
-      transition: { 
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
-  }
-
   return (
     <S.Container id='my-profile'>
       <S.Grid>
-        {/* Left Column */}
-        <S.LeftColumn variants={staggerContainer} initial='hidden' animate='visible'>
-          <S.Greeting variants={fadeInUp}>
+        {/* Left Column with scroll animations */}
+        <S.LeftColumn
+          variants={S.containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <S.Greeting variants={S.greetingVariants}>
             你好! <span>I am</span>
           </S.Greeting>
 
-          <S.NameContainer variants={fadeInUp}>
-            <S.Name>Soros Lie</S.Name>
-            <S.ChineseName>(李龙神)</S.ChineseName>
+          <S.NameContainer>
+            <S.Name variants={S.nameVariants}>Soros Lie</S.Name>
+            <S.ChineseName 
+              variants={S.chineseNameVariants}
+              custom={1}
+            >
+              (李龙神)
+            </S.ChineseName>
           </S.NameContainer>
 
-          <S.Title variants={fadeInUp}>Sr. Quality Assurance</S.Title>
+          <S.Title variants={S.titleVariants}>Sr. Quality Assurance</S.Title>
 
           {/* Futuristic Divider with Shimmer Effect */}
-          <S.Divider variants={fadeInUp} />
+          <S.Divider variants={S.dividerVariants} />
 
-          {/* Social Icons */}
-          <SocialIcons variants={fadeInUp} />
+          {/* Social Icons with stagger */}
+          <S.SocialContainer
+            variants={S.socialContainerVariants}
+          >
+            <SocialIcons variants={S.socialIconVariants} />
+          </S.SocialContainer>
 
-          {/* Stats Box */}
-          <S.StatsBox variants={fadeInUp}>
-            <S.StatItem>
-              <S.StatNumber>3.5+</S.StatNumber>
+          {/* Stats Box with animated numbers */}
+          <S.StatsBox variants={S.statsBoxVariants}>
+            <S.StatItem
+              as={motion.div} // Changed from S.motion.div to motion.div
+              variants={S.statItemVariants}
+              custom={0}
+            >
+              <S.StatNumber>4.5+</S.StatNumber>
               <S.StatLabel>Years Experience</S.StatLabel>
             </S.StatItem>
-            <S.StatItem>
+            <S.StatItem
+              as={motion.div} // Changed from S.motion.div to motion.div
+              variants={S.statItemVariants}
+              custom={1}
+            >
               <S.StatNumber>10+</S.StatNumber>
-              <S.StatLabel>Projects Completed</S.StatLabel>
+              <S.StatLabel>Projects Contribution</S.StatLabel>
             </S.StatItem>
-            <S.StatItem>
+            <S.StatItem
+              as={motion.div} // Changed from S.motion.div to motion.div
+              variants={S.statItemVariants}
+              custom={2}
+            >
               <S.StatNumber>4+</S.StatNumber>
               <S.StatLabel>Automation Builds</S.StatLabel>
             </S.StatItem>
           </S.StatsBox>
         </S.LeftColumn>
 
-        {/* Right Column - Hidden on mobile - FIXED */}
+        {/* Right Column - Hidden on mobile */}
         <S.RightColumn
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          variants={S.rightColumnVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
         >
           <S.ImageContainer>
-            {/* FIXED: Circle wrapper separates centering from animation */}
+            {/* Background glow effect */}
+            <motion.div // Changed from S.motion.div to motion.div
+              style={{
+                position: 'absolute',
+                width: '600px',
+                height: '600px',
+                background: 'radial-gradient(circle, rgba(19,204,158,0.15) 0%, rgba(124,58,237,0.1) 50%, transparent 70%)',
+                borderRadius: '50%',
+                filter: 'blur(60px)',
+                zIndex: 0,
+              }}
+              variants={S.backgroundGlowVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+            />
+            
+            {/* Circle Wrapper */}
             <S.CircleWrapper>
               <S.WhiteCircle
-                variants={circleVariants}
-                initial="initial"
+                variants={S.circleVariants}
                 whileHover="hover"
               />
             </S.CircleWrapper>
@@ -118,8 +106,7 @@ const NewHero = (): JSX.Element => {
             <S.ProfileImage
               src={SorosImage}
               alt='Soros Lie'
-              variants={imageVariants}
-              initial="initial"
+              variants={S.imageVariants}
               whileHover="hover"
             />
           </S.ImageContainer>

@@ -58,7 +58,7 @@ export const LeftColumn = styled(motion.div)`
 
 export const Greeting = styled(motion.span)`
   font-size: 2.4rem;
-  color: ${ColorPalletes.greenPrimary};
+  color: ${ColorPalletes.lavenderPrimary};
   letter-spacing: 2px;
   font-weight: 500;
   margin-bottom: -0.3rem;
@@ -370,3 +370,241 @@ export const ProfileImage = styled(motion.img)`
     filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.9));
   }
 `
+
+// Animation Variants for scroll-triggered animations
+export const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1
+    }
+  }
+}
+
+export const leftContentVariants = {
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 15,
+      duration: 0.8
+    }
+  }
+}
+
+export const greetingVariants = {
+  hidden: { y: -50, opacity: 0, rotateX: -15 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    rotateX: 0,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 12,
+      duration: 0.6
+    }
+  }
+}
+
+export const nameVariants = {
+  hidden: { scale: 0.8, opacity: 0, x: -30 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 150,
+      damping: 15,
+      duration: 0.7
+    }
+  }
+}
+
+export const chineseNameVariants = {
+  hidden: { opacity: 0, x: -20, rotateY: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    rotateY: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+      delay: 0.2
+    }
+  }
+}
+
+export const titleVariants = {
+  hidden: { y: 30, opacity: 0, scale: 0.9 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 14,
+      delay: 0.1
+    }
+  }
+}
+
+export const dividerVariants = {
+  hidden: { width: 0, opacity: 0 },
+  visible: {
+    width: "220px",
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      damping: 12,
+      delay: 0.3,
+      duration: 0.8
+    }
+  }
+}
+
+export const socialContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.4
+    }
+  }
+}
+
+export const socialIconVariants = {
+  hidden: { y: 30, opacity: 0, rotate: -10 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 12
+    }
+  }
+}
+
+export const statsBoxVariants = {
+  hidden: { y: 50, opacity: 0, scale: 0.9 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+      delay: 0.5,
+      duration: 0.8
+    }
+  }
+}
+
+export const statItemVariants = {
+  hidden: { scale: 0.5, opacity: 0 },
+  visible: (custom: number) => ({
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 12,
+      delay: 0.6 + (custom * 0.1)
+    }
+  })
+}
+
+export const rightColumnVariants = {
+  hidden: { x: 100, opacity: 0, rotateY: 15 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    rotateY: 0,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      damping: 15,
+      duration: 1,
+      delay: 0.2
+    }
+  }
+}
+
+export const circleVariants = {
+  hidden: { scale: 0, opacity: 0, rotate: -90 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      stiffness: 60,
+      damping: 12,
+      duration: 1.2,
+      delay: 0.3
+    }
+  },
+  hover: { 
+    scale: 1.1,
+    boxShadow: `
+      0 30px 70px rgba(0, 0, 0, 0.9),
+      0 0 0 3px rgba(255, 255, 255, 0.5),
+      0 0 0 7px rgba(255, 255, 255, 0.2),
+      inset 0 0 50px rgba(255, 255, 255, 0.3)
+    `,
+    transition: { 
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
+}
+
+export const imageVariants = {
+  hidden: { scale: 0.7, opacity: 0, y: 50 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 14,
+      duration: 1,
+      delay: 0.5
+    }
+  },
+  hover: { 
+    scale: 1.05,
+    filter: 'drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))',
+    transition: { 
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
+}
+
+export const backgroundGlowVariants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: {
+    opacity: [0, 0.3, 0.5, 0.3, 0.5],
+    scale: [0.5, 0.8, 1, 0.9, 1],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      repeatType: "reverse" as const
+    }
+  }
+}

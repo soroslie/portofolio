@@ -11,7 +11,7 @@ const ColorPalletes = {
   whitePrimary: '#FFFFFF',
   blueSecondary: '#124AD9',
   bluePrimary: '#20428A',
-  lavenderPrimary: '#DEE6F7',
+  lavenderPrimary: '#A881CD',
   whiteSecondary: '#FCFFFC',
   graySecondary: '#F9F9F9',
   grayPrimary: '#D1D5DB',
