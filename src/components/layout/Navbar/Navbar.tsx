@@ -2,20 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { MyNavigation } from '../../../utils/navigation'
 import * as S from './Navbar.style'
 import resume from '/Soros-Lie-CV.pdf'
-import PersonIcon from '@mui/icons-material/Person'
-import CodeIcon from '@mui/icons-material/Code'
-import BuildIcon from '@mui/icons-material/Build'
-import ContactMailIcon from '@mui/icons-material/ContactMail'
-import DescriptionIcon from '@mui/icons-material/Description'
-
-// Map icons to navigation items
-const iconMap: Record<string, React.ElementType> = {
-  'PROFILE': PersonIcon,
-  'PROJECTS': CodeIcon,
-  'SKILLS': BuildIcon,
-  'CONTACT': ContactMailIcon,
-  'RESUME': DescriptionIcon
-}
 
 const Navbar = (): JSX.Element => {
   const [scrolled, setScrolled] = useState(false)
@@ -63,7 +49,7 @@ const Navbar = (): JSX.Element => {
       <S.FloatingContainer $scrolled={scrolled} $isMobile={isMobile}>
         <S.NavButtonsContainer $isMobile={isMobile}>
           {MyNavigation.map((item) => {
-            const IconComponent = iconMap[item.name]
+            const IconComponent = item.icon
             return (
               <S.NavButton
                 key={item.id}
