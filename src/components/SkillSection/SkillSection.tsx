@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Typography, Paper, useTheme, useMediaQuery } from '@mui/material'
+import { motion } from 'framer-motion'
 import SkillChip from './SkillChip'
 import { MySkill } from '../../constants/resume/skill'
 import * as styles from './SkillSection.style'
@@ -29,119 +30,250 @@ const SkillSection: React.FC<SkillSectionProps> = ({ title = 'My Skills' }) => {
   const firstRow = MySkill.slice(0, 2)
   const secondRow = MySkill.slice(2, 4)
 
+  // Wrap Paper with motion component
+  const MotionPaper = motion(Paper)
+
   return (
     <Box id='my-skill' sx={styles.sectionContainer}>
       <Box sx={styles.innerContainer}>
-        <Typography variant='h4' sx={styles.sectionTitle(glowColor)}>
-          {title}
-        </Typography>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={styles.titleVariants}
+        >
+          <Typography variant='h4' sx={styles.sectionTitle(glowColor)}>
+            {title}
+          </Typography>
+        </motion.div>
 
         {!isMobile ? (
-          <Box>
+          <motion.div
+            variants={styles.containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+          >
             {/* First Row */}
-            <Box sx={styles.rowContainer}>
-              {firstRow.map((category) => {
-                const IconComponent = category.icon
-                const categoryColor = category.color
-                const lighterBgColor = lightenColor(categoryColor, 0.8)
+            <motion.div variants={styles.itemVariants}>
+              <Box sx={styles.rowContainer}>
+                {firstRow.map((category) => {
+                  const IconComponent = category.icon
+                  const categoryColor = category.color
+                  const lighterBgColor = lightenColor(categoryColor, 0.8)
 
-                return (
-                  <Box key={category.name} sx={styles.cardWrapper}>
-                    <Paper elevation={8} sx={styles.paperStyles(categoryColor)}>
-                      <Box sx={styles.topGradient(categoryColor)} />
+                  return (
+                    <Box key={category.name} sx={styles.cardWrapper}>
+                      <MotionPaper
+                        elevation={8}
+                        sx={styles.paperStyles(categoryColor)}
+                        whileHover={styles.paperHoverEffect}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Box sx={styles.topGradient(categoryColor)} />
 
-                      {/* Centered Icon */}
-                      <Box sx={styles.iconContainer(lighterBgColor, categoryColor)}>
-                        <IconComponent sx={{ fontSize: 30 }} />
-                      </Box>
+                        {/* Centered Icon */}
+                        <motion.div
+                          variants={styles.iconVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false }}
+                          transition={{ delay: 0.1 }}
+                        >
+                          <Box sx={styles.iconContainer(lighterBgColor, categoryColor)}>
+                            <IconComponent sx={{ fontSize: 30 }} />
+                          </Box>
+                        </motion.div>
 
-                      {/* Centered Title */}
-                      <Typography variant='h6' sx={styles.categoryTitle}>
-                        {category.name}
-                      </Typography>
+                        {/* Centered Title */}
+                        <motion.div
+                          variants={styles.contentVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false }}
+                        >
+                          <Typography variant='h6' sx={styles.categoryTitle}>
+                            {category.name}
+                          </Typography>
+                        </motion.div>
 
-                      {/* Left-aligned List */}
-                      <Box sx={styles.chipContainer}>
-                        {category.list.map((skill) => (
-                          <SkillChip key={skill.name} skill={skill.name} rating={skill.level} />
-                        ))}
-                      </Box>
-                    </Paper>
-                  </Box>
-                )
-              })}
-            </Box>
+                        {/* Left-aligned List */}
+                        <motion.div
+                          variants={styles.chipContainerVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false }}
+                        >
+                          <Box sx={styles.chipContainer}>
+                            {category.list.map((skill) => (
+                              <motion.div
+                                key={skill.name}
+                                variants={styles.chipVariants}
+                                whileHover={styles.chipHoverEffect}
+                              >
+                                <SkillChip skill={skill.name} rating={skill.level} />
+                              </motion.div>
+                            ))}
+                          </Box>
+                        </motion.div>
+                      </MotionPaper>
+                    </Box>
+                  )
+                })}
+              </Box>
+            </motion.div>
 
             {/* Second Row */}
-            <Box sx={styles.lastRowContainer}>
-              {secondRow.map((category) => {
+            <motion.div variants={styles.itemVariants}>
+              <Box sx={styles.lastRowContainer}>
+                {secondRow.map((category) => {
+                  const IconComponent = category.icon
+                  const categoryColor = category.color
+                  const lighterBgColor = lightenColor(categoryColor, 0.8)
+
+                  return (
+                    <Box key={category.name} sx={styles.cardWrapper}>
+                      <MotionPaper
+                        elevation={8}
+                        sx={styles.paperStyles(categoryColor)}
+                        whileHover={styles.paperHoverEffect}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Box sx={styles.topGradient(categoryColor)} />
+
+                        {/* Centered Icon */}
+                        <motion.div
+                          variants={styles.iconVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false }}
+                          transition={{ delay: 0.1 }}
+                        >
+                          <Box sx={styles.iconContainer(lighterBgColor, categoryColor)}>
+                            <IconComponent sx={{ fontSize: 30 }} />
+                          </Box>
+                        </motion.div>
+
+                        {/* Centered Title */}
+                        <motion.div
+                          variants={styles.contentVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false }}
+                        >
+                          <Typography variant='h6' sx={styles.categoryTitle}>
+                            {category.name}
+                          </Typography>
+                        </motion.div>
+
+                        {/* Left-aligned List */}
+                        <motion.div
+                          variants={styles.chipContainerVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: false }}
+                        >
+                          <Box sx={styles.chipContainer}>
+                            {category.list.map((skill) => (
+                              <motion.div
+                                key={skill.name}
+                                variants={styles.chipVariants}
+                                whileHover={styles.chipHoverEffect}
+                              >
+                                <SkillChip skill={skill.name} rating={skill.level} />
+                              </motion.div>
+                            ))}
+                          </Box>
+                        </motion.div>
+                      </MotionPaper>
+                    </Box>
+                  )
+                })}
+              </Box>
+            </motion.div>
+          </motion.div>
+        ) : (
+          // Mobile view
+          <motion.div
+            variants={styles.containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+          >
+            <Box sx={styles.mobileContainer}>
+              {MySkill.map((category) => {
                 const IconComponent = category.icon
                 const categoryColor = category.color
                 const lighterBgColor = lightenColor(categoryColor, 0.8)
 
                 return (
-                  <Box key={category.name} sx={styles.cardWrapper}>
-                    <Paper elevation={8} sx={styles.paperStyles(categoryColor)}>
+                  <motion.div
+                    key={category.name}
+                    variants={styles.itemVariants}
+                    whileHover={styles.paperHoverEffect}
+                  >
+                    <Paper
+                      elevation={8}
+                      sx={styles.mobilePaperStyles()}
+                    >
                       <Box sx={styles.topGradient(categoryColor)} />
 
                       {/* Centered Icon */}
-                      <Box sx={styles.iconContainer(lighterBgColor, categoryColor)}>
-                        <IconComponent sx={{ fontSize: 30 }} />
-                      </Box>
+                      <motion.div
+                        variants={styles.iconVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false }}
+                        transition={{ delay: 0.1 }}
+                      >
+                        <Box sx={styles.mobileIconContainer(lighterBgColor, categoryColor)}>
+                          <IconComponent sx={{ fontSize: 28 }} />
+                        </Box>
+                      </motion.div>
 
                       {/* Centered Title */}
-                      <Typography variant='h6' sx={styles.categoryTitle}>
-                        {category.name}
-                      </Typography>
+                      <motion.div
+                        variants={styles.contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false }}
+                      >
+                        <Typography variant='h6' sx={styles.mobileCategoryTitle}>
+                          {category.name}
+                        </Typography>
+                      </motion.div>
 
                       {/* Left-aligned List */}
-                      <Box sx={styles.chipContainer}>
-                        {category.list.map((skill) => (
-                          <SkillChip key={skill.name} skill={skill.name} rating={skill.level} />
-                        ))}
-                      </Box>
+                      <motion.div
+                        variants={styles.chipContainerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false }}
+                      >
+                        <Box sx={styles.chipContainer}>
+                          {category.list.map((skill) => (
+                            <motion.div
+                              key={skill.name}
+                              variants={styles.chipVariants}
+                              whileHover={styles.chipHoverEffect}
+                            >
+                              <SkillChip skill={skill.name} rating={skill.level} />
+                            </motion.div>
+                          ))}
+                        </Box>
+                      </motion.div>
                     </Paper>
-                  </Box>
+                  </motion.div>
                 )
               })}
             </Box>
-          </Box>
-        ) : (
-          // Mobile view
-          <Box sx={styles.mobileContainer}>
-            {MySkill.map((category) => {
-              const IconComponent = category.icon
-              const categoryColor = category.color
-              const lighterBgColor = lightenColor(categoryColor, 0.8)
-
-              return (
-                <Paper
-                  key={category.name}
-                  elevation={8}
-                  sx={styles.mobilePaperStyles()}
-                >
-                  <Box sx={styles.topGradient(categoryColor)} />
-
-                  {/* Centered Icon */}
-                  <Box sx={styles.mobileIconContainer(lighterBgColor, categoryColor)}>
-                    <IconComponent sx={{ fontSize: 28 }} />
-                  </Box>
-
-                  {/* Centered Title */}
-                  <Typography variant='h6' sx={styles.mobileCategoryTitle}>
-                    {category.name}
-                  </Typography>
-
-                  {/* Left-aligned List */}
-                  <Box sx={styles.chipContainer}>
-                    {category.list.map((skill) => (
-                      <SkillChip key={skill.name} skill={skill.name} rating={skill.level} />
-                    ))}
-                  </Box>
-                </Paper>
-              )
-            })}
-          </Box>
+          </motion.div>
         )}
       </Box>
     </Box>

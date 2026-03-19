@@ -24,7 +24,7 @@ const MyExperience: Experience[] = [
         other_tools: ['JIRA']
       },
       {
-        name: 'XLSmart - OLA Web Grosir Website',
+        name: 'Smartfren - OLA Web Grosir Website',
         link: 'https://mitra.smartfren.com/digital-outlet',
         is_active: true,
         role: 'Sr. QA Automation',
@@ -132,12 +132,12 @@ const MyExperience: Experience[] = [
     name: 'automation',
     list: [
       {
-        name: 'XLSmart - OLA Web Grosir Website',
+        name: 'Smartfren - OLA Web Grosir Website',
         link: 'https://mitra.smartfren.com/digital-outlet',
         is_active: true,
         role: 'Sr. QA Automation',
         description:
-          'Led end-to-end testing efforts including task breakdown, production issue debugging, and risk assessment for new features and regression testing on both user website and CMS platform.',
+          'Develop automation from scratch to cover regression test cases for both user-facing website and CMS platform, utilizing Cypress.',
         fe_frameworks: ['ReactJS'],
         be_frameworks: ['Go', 'MariaDB'],
         testing_tools: ['Cypress', 'Postman', 'Katalon'],
@@ -156,7 +156,7 @@ const MyExperience: Experience[] = [
         is_active: true,
         role: 'Sr. QA Automation',
         description:
-          'Managed testing activities and identified risk concerns during new feature development and regression cycles to ensure product reliability.',
+          'Develop automation from scratch to cover regression test cases for the website using cypress.',
         fe_frameworks: ['VueJS'],
         be_frameworks: ['Go', 'PostgreSQL'],
         testing_tools: ['Cypress'],

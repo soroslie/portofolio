@@ -148,3 +148,99 @@ export const mobileCategoryTitle: SxProps<Theme> = {
   color: '#f1f5f9',
   textAlign: 'center'
 }
+
+// Animation variants
+export const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+}
+
+export const itemVariants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+      duration: 0.6
+    }
+  }
+}
+
+export const titleVariants = {
+  hidden: { scale: 0.9, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 20,
+      duration: 0.8
+    }
+  }
+}
+
+export const chipContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.3
+    }
+  }
+}
+
+export const chipVariants = {
+  hidden: { x: -10, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 20
+    }
+  }
+}
+
+export const iconVariants = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    transition: {
+      type: "spring", 
+      stiffness: 260, 
+      damping: 20
+    }
+  }
+}
+
+export const contentVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.2
+    }
+  }
+}
+
+export const paperHoverEffect = {
+  y: -8,
+  transition: { type: "spring", stiffness: 400, damping: 17 }
+}
+
+export const chipHoverEffect = {
+  scale: 1.05,
+  transition: { type: "spring", stiffness: 400, damping: 17 }
+}

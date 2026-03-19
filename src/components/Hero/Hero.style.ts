@@ -13,12 +13,12 @@ export const Container = styled.div`
   margin-top: -40px;
 
   @media only screen and (max-width: ${MediaScreen.tablet}) {
-    height: auto; /* Changed from 100vh to auto */
-    min-height: auto; /* Removed min-height */
+    height: auto;
+    min-height: auto;
     padding: 1rem;
     align-items: flex-start;
     padding-top: 2rem;
-    padding-bottom: 0; /* No bottom padding */
+    padding-bottom: 0;
     margin-top: -30px;
   }
 `
@@ -51,7 +51,7 @@ export const LeftColumn = styled(motion.div)`
     text-align: center;
     padding: 0 1rem;
     gap: 0.8rem;
-    transform: scale(1); /* Remove scale on mobile */
+    transform: scale(1);
     width: 100%;
   }
 `
@@ -235,14 +235,14 @@ export const StatsBox = styled(motion.div)`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background: rgba(50, 50, 55, 0.5); /* Slightly lighter background */
-    border-color: rgba(255, 255, 255, 0.25); /* More visible border */
+    background: rgba(50, 50, 55, 0.5);
+    border-color: rgba(255, 255, 255, 0.25);
     box-shadow: 
       0 20px 40px rgba(0, 0, 0, 0.8),
       0 8px 20px rgba(0, 0, 0, 0.5),
       inset 0 1px 3px rgba(255, 255, 255, 0.12);
-    transform: translateY(-4px); /* Slight lift effect */
-    backdrop-filter: blur(14px); /* Slightly more blur on hover */
+    transform: translateY(-4px);
+    backdrop-filter: blur(14px);
   }
 
   @media only screen and (max-width: ${MediaScreen.mobile}) {
@@ -251,7 +251,7 @@ export const StatsBox = styled(motion.div)`
     padding: 1.5rem;
     
     &:hover {
-      transform: translateY(-2px); /* Smaller lift on mobile */
+      transform: translateY(-2px);
     }
   }
 
@@ -288,7 +288,7 @@ export const StatLabel = styled.span`
   }
 `
 
-// Right Column Styles
+// Right Column Styles - FIXED VERSION
 export const RightColumn = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -296,11 +296,11 @@ export const RightColumn = styled(motion.div)`
   position: relative;
 
   @media only screen and (max-width: ${MediaScreen.laptop}) {
-    transform: scale(0.9); /* Scale down for laptop */
+    transform: scale(0.9);
   }
 
   @media only screen and (max-width: ${MediaScreen.tablet}) {
-    display: none; /* Hide on tablet and mobile */
+    display: none;
   }
 `
 
@@ -313,32 +313,40 @@ export const ImageContainer = styled(motion.div)`
   align-items: center;
 
   @media only screen and (max-width: ${MediaScreen.laptop}) {
-    max-width: 400px; /* Smaller container for laptop */
+    max-width: 400px;
   }
 `
 
-// White circle - responsive sizing
-export const WhiteCircle = styled(motion.div)`
+// FIXED: Circle Wrapper to handle centering separately
+export const CircleWrapper = styled(motion.div)`
   position: absolute;
-  width: 480px;
-  height: 480px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  z-index: 1;
+  pointer-events: none; /* Prevents interference with image hover */
+  
+  @media only screen and (max-width: ${MediaScreen.laptop}) {
+    width: 380px;
+    height: 380px;
+  }
+`
+
+// FIXED: White circle with proper transform-origin
+export const WhiteCircle = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
   box-shadow: 
     0 20px 50px rgba(0, 0, 0, 0.8),
     0 0 0 2px rgba(255, 255, 255, 0.3),
     0 0 0 5px rgba(255, 255, 255, 0.1),
     inset 0 0 30px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-
-  @media only screen and (max-width: ${MediaScreen.laptop}) {
-    width: 380px; /* Smaller circle for laptop */
-    height: 380px;
-  }
+  transform-origin: center center;
+  will-change: transform, box-shadow;
 `
 
 export const ProfileImage = styled(motion.img)`
@@ -352,9 +360,10 @@ export const ProfileImage = styled(motion.img)`
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
   display: block;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   @media only screen and (max-width: ${MediaScreen.laptop}) {
-    max-height: 380px; /* Smaller image for laptop */
+    max-height: 380px;
   }
 
   &:hover {
