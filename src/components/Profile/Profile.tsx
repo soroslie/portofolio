@@ -2,7 +2,6 @@ import Qr from '../../assets/images/vcard-soros.png'
 import * as S from './Profile.style'
 import { MyFrammer } from '../../utils/framer'
 import { SubHeading } from '../../constants/content/home'
-import SocialMedias from '../socialMedias/SocialMedias'
 
 const Profile = (): JSX.Element => {
   return (
@@ -19,7 +18,6 @@ const Profile = (): JSX.Element => {
             Hi, I&apos;m <span>Soros Lie</span>
           </S.Heading>
           <S.SubContent>{SubHeading[2]}</S.SubContent>
-          <SocialMedias />
         </S.LeftSection>
         <S.RightSection
           variants={MyFrammer}

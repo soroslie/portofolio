@@ -1,162 +1,344 @@
 import styled from 'styled-components'
 import ColorPalletes from '../../utils/color'
-import Grid from '@mui/material/Unstable_Grid2'
 import { motion } from 'framer-motion'
 import { MediaScreen } from '../../utils/mediaScreen'
 
 export const Container = styled.div`
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #000000;
   color: ${ColorPalletes.whitePrimary};
-`
-export const Grids = styled(Grid)`
-  padding: 1rem 2rem 2rem 1rem;
-`
-export const Heading = styled(motion.h1)`
-  font-size: 7rem;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: -7px;
-  font-family: Arial;
-  color: ${ColorPalletes.greenPrimary};
-  text-align: center;
+  padding: 0 2rem;
+  margin-top: -40px;
+
   @media only screen and (max-width: ${MediaScreen.tablet}) {
-    font-size: 5rem;
-    letter-spacing: -2px;
-    border-radius: 20% 20% 0 0;
+    height: auto; /* Changed from 100vh to auto */
+    min-height: auto; /* Removed min-height */
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 0; /* No bottom padding */
+    margin-top: -30px;
   }
+`
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+`
+
+// Left Column Styles
+export const LeftColumn = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: scale(1.05);
+  padding: 0 2rem;
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    gap: 0.8rem;
+    transform: scale(1); /* Remove scale on mobile */
+    width: 100%;
+  }
+`
+
+export const Greeting = styled(motion.span)`
+  font-size: 2.4rem;
+  color: ${ColorPalletes.greenPrimary};
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: -0.3rem;
+  
+  span {
+    color: ${ColorPalletes.whitePrimary};
+    font-size: 2rem;
+    margin-left: 0.5rem;
+  }
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    font-size: 2rem;
+    span {
+      font-size: 1.8rem;
+    }
+  }
+`
+
+export const NameContainer = styled(motion.div)`
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    justify-content: center;
+  }
+`
+
+export const Name = styled(motion.h1)`
+  font-size: clamp(3.4rem, 6vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  color: ${ColorPalletes.whitePrimary};
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    font-size: clamp(2.8rem, 5vw, 3.5rem);
+  }
+`
+
+export const ChineseName = styled(motion.span)`
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: ${ColorPalletes.greenPrimary};
+  opacity: 0.9;
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+`
+
+export const Title = styled(motion.h2)`
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  color: ${ColorPalletes.orangeLight};
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  letter-spacing: 1px;
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+  }
+`
+
+// Futuristic Divider
+export const Divider = styled(motion.div)`
+  width: 220px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    ${ColorPalletes.orangeLight}, 
+    ${ColorPalletes.greenPrimary}, 
+    transparent
+  );
+  margin: 0.2rem 0 0.8rem 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.6), 
+      transparent
+    );
+    animation: shimmer 2.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    margin: 0.2rem auto 0.8rem auto;
+    width: 180px;
+  }
+`
+
+// Social Icons
+export const SocialContainer = styled(motion.div)`
+  display: flex;
+  gap: 1.2rem;
+  margin: 0.5rem 0 1rem 0;
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem 0 0.8rem 0;
+  }
+`
+
+export const SocialIcon = styled(motion.a)`
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: ${ColorPalletes.orangeLight};
+  color: ${ColorPalletes.whitePrimary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 25px ${ColorPalletes.orangeLight}60, 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+  }
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    width: 48px;
+    height: 48px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+`
+
+// Stats Box
+export const StatsBox = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 1.8rem;
+  margin: 0.2rem 0 0 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
   @media only screen and (max-width: ${MediaScreen.mobile}) {
-    font-size: 3rem;
-    letter-spacing: 0;
-    border-radius: 20% 20% 0 0;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
   }
-`
-export const Content = styled.div`
-  height: 50vh;
-  width: 100%;
-  position: relative;
-  padding-bottom: 10rem;
-  z-index: 1;
 
   @media only screen and (max-width: ${MediaScreen.tablet}) {
-    display: none;
+    margin: 0.2rem 0 0 0;
   }
 `
 
-export const ModelContainer = styled(motion.div)`
-  position: absolute;
-  top: 0rem;
-  left: 0;
-  width: 100%;
-  height: 60vh;
-  background-color: ${ColorPalletes.greenPrimary};
-  background-image: linear-gradient(rgba(109, 117, 136, 0.3) 0.2em, transparent 0.1em),
-    linear-gradient(90deg, rgba(109, 117, 136, 0.3) 0.2em, transparent 0.1em);
-  background-size: 4em 4em;
-  z-index: 2;
-  border-radius: 0 20rem 20rem 0;
+export const StatItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`
 
-  @media only screen and (max-width: ${MediaScreen.laptop}) {
-    border-radius: 0% 0% 0% 0%;
-    width: 100vw;
+export const StatNumber = styled.span`
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: ${ColorPalletes.greenPrimary};
+  margin-bottom: 0.3rem;
+
+  @media only screen and (max-width: ${MediaScreen.mobile}) {
+    font-size: 1.8rem;
   }
 `
 
-export const Model = styled(motion.img)`
+export const StatLabel = styled.span`
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3;
+
+  @media only screen and (max-width: ${MediaScreen.mobile}) {
+    font-size: 0.9rem;
+  }
+`
+
+// Right Column Styles
+export const RightColumn = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  /* filter: grayscale(100%); */
-`
-export const Shape = styled(motion.img)`
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  position: absolute;
-  z-index: 500;
-`
-export const TextShape = styled(motion.h2)`
-  z-index: 500;
 
-  span {
-    box-shadow: -10px 0px 0 7px #d32, 10px 0px 0 7px #d32, 0 0 0 7px #d32;
-    box-decoration-break: clone;
-    border-radius: 4px;
+  @media only screen and (max-width: ${MediaScreen.laptop}) {
+    transform: scale(0.9); /* Scale down for laptop */
+  }
+
+  @media only screen and (max-width: ${MediaScreen.tablet}) {
+    display: none; /* Hide on tablet and mobile */
   }
 `
-export const Circle = styled(Shape)`
-  background-color: white;
-  border-radius: 100%;
-`
-export const Hexagon = styled(Shape)`
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-`
-export const Chip = styled(Shape)`
-  border-radius: 2rem;
+
+export const ImageContainer = styled(motion.div)`
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: ${MediaScreen.laptop}) {
+    max-width: 400px; /* Smaller container for laptop */
+  }
 `
 
-export const Rectangle = styled(Shape)`
-  border-radius: 1rem;
-`
-
-export const SkillRegression = styled(TextShape)`
-  padding: 4px 6px;
-  line-height: 1.25;
-  font-size: 28px;
-  font-weight: 700;
+// White circle - responsive sizing
+export const WhiteCircle = styled(motion.div)`
   position: absolute;
-  text-align: center;
-  right: 5%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: 1;
   top: 50%;
-  span {
-    background-color: #ee4d2d;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 2px rgba(255, 255, 255, 0.3),
+    0 0 0 5px rgba(255, 255, 255, 0.1),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  @media only screen and (max-width: ${MediaScreen.laptop}) {
+    width: 380px; /* Smaller circle for laptop */
+    height: 380px;
   }
 `
 
-export const SkillUXD = styled(TextShape)`
-  padding: 4px 6px;
-  line-height: 1.25;
-  font-size: 28px;
-  font-weight: 700;
-  position: absolute;
-  text-align: left;
-  left: 2%;
-  bottom: 50%;
-  span {
-    background-color: #ee4d2d;
+export const ProfileImage = styled(motion.img)`
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: contain;
+  object-position: center;
+  z-index: 2;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+  display: block;
+  transition: all 0.3s ease;
+
+  @media only screen and (max-width: ${MediaScreen.laptop}) {
+    max-height: 380px; /* Smaller image for laptop */
   }
-`
 
-export const SkillTailwind = styled(Chip)`
-  position: absolute;
-  height: 60px;
-  background-color: #f3d10d;
-  padding: 0.05rem;
-  right: 15%;
-  top: 20%;
-`
-
-export const SkillReact = styled(Rectangle)`
-  position: absolute;
-  padding: 1rem;
-  width: 100px;
-  background-color: #f47905;
-  left: 20%;
-  bottom: 10%;
-`
-export const SkillPostgres = styled(Circle)`
-  padding: 0.5rem;
-  height: 100px;
-  right: 15%;
-  bottom: -5%;
-  padding: 1rem;
-`
-export const SkillCypress = styled(Circle)`
-  padding: 0.5rem;
-  height: 100px;
-  left: 15%;
-  top: -5%;
+  &:hover {
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.9));
+  }
 `

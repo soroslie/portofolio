@@ -1,6 +1,8 @@
 const ColorPalletes = {
   greenSecondary: '#87C159',
   greenPrimary: '#13cc9e',
+  orangeLight: '#ffb081', 
+  orangeDark: '#ff7a50',
   yellowSecondary: '#F3D408',
   yellowPrimary: '#F3C301',
   redPrimary: '#EA1601',
