@@ -16,3 +16,4 @@ export interface Experience {
   list: ProjectItem[]
   icon: JSX.Element
 }
+

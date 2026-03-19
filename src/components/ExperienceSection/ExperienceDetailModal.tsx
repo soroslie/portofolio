@@ -15,13 +15,11 @@ import CodeIcon from '@mui/icons-material/Code'
 import StorageIcon from '@mui/icons-material/Storage'
 import BugReportIcon from '@mui/icons-material/BugReport'
 import BuildIcon from '@mui/icons-material/Build'
-import AssignmentIcon from '@mui/icons-material/Assignment'
 import PersonIcon from '@mui/icons-material/Person'
 import DescriptionIcon from '@mui/icons-material/Description'
 import ScienceIcon from '@mui/icons-material/Science'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
-// Types
 export interface ProjectDetail {
   name: string
   role: string
