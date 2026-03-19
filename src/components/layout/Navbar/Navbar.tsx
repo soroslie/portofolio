@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { MyNavigation } from '../../../utils/navigation'
 import * as S from './Navbar.style'
 import resume from '/Soros-Lie-CV.pdf'
@@ -18,7 +18,7 @@ const Navbar = (): JSX.Element => {
 
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleResize)
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
@@ -56,8 +56,8 @@ const Navbar = (): JSX.Element => {
                 onClick={() => handleClick(item.id, item.path)}
                 $isMobile={isMobile}
               >
-                {IconComponent && <IconComponent className="nav-icon" />}
-                <span className="nav-text">{item.name}</span>
+                {IconComponent && <IconComponent className='nav-icon' />}
+                <span className='nav-text'>{item.name}</span>
               </S.NavButton>
             )
           })}
