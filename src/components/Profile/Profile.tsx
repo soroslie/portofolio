@@ -6,7 +6,7 @@ import { SubHeading } from '../../constants/content/home'
 const Profile = (): JSX.Element => {
   return (
     <>
-      <S.Container id='my-profile'>
+      <S.Container>
         <S.LeftSection
           variants={MyFrammer}
           initial='hidden'

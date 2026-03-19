@@ -222,18 +222,37 @@ export const StatsBox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(40, 40, 45, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 24px;
   padding: 1.8rem;
   margin: 0.2rem 0 0 0;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: rgba(50, 50, 55, 0.5); /* Slightly lighter background */
+    border-color: rgba(255, 255, 255, 0.25); /* More visible border */
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.8),
+      0 8px 20px rgba(0, 0, 0, 0.5),
+      inset 0 1px 3px rgba(255, 255, 255, 0.12);
+    transform: translateY(-4px); /* Slight lift effect */
+    backdrop-filter: blur(14px); /* Slightly more blur on hover */
+  }
 
   @media only screen and (max-width: ${MediaScreen.mobile}) {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1.5rem;
+    
+    &:hover {
+      transform: translateY(-2px); /* Smaller lift on mobile */
+    }
   }
 
   @media only screen and (max-width: ${MediaScreen.tablet}) {

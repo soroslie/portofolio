@@ -19,7 +19,7 @@ const NewHero = (): JSX.Element => {
   }
 
   return (
-    <S.Container>
+    <S.Container id='my-profile'>
       <S.Grid>
         {/* Left Column */}
         <S.LeftColumn variants={staggerContainer} initial='hidden' animate='visible'>
