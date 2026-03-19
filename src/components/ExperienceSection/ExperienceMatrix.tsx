@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Typography, Grid, alpha } from '@mui/material'
 import MyExperience from '../../constants/content/experience'
+import DetailExperienceModal, { ProjectDetail } from './ExperienceDetailModal'
 import {
   ExpertiseSection,
   SectionTitle,
@@ -18,6 +19,9 @@ import {
 } from './ExperienceMatrix.style'
 
 const ExperienceMatrix: React.FC = () => {
+  const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
+
   // Calculate total projects from all categories
   const totalProjects = MyExperience.filter(
     (item) =>
@@ -34,10 +38,26 @@ const ExperienceMatrix: React.FC = () => {
     return acc + curr.list.filter((project) => project.is_active).length
   }, 0)
 
-  const handleProjectClick = (link: string) => {
-    if (link) {
-      window.open(link, '_blank', 'noopener noreferrer')
-    }
+  const handleProjectClick = (event: React.MouseEvent<HTMLElement>, project: any) => {
+    event.stopPropagation()
+    setSelectedProject({
+      name: project.name,
+      role: project.role || '',
+      description: project.description || '',
+      fe_frameworks: project.fe_frameworks || [],
+      be_frameworks: project.be_frameworks || [],
+      testing_tools: project.testing_tools || [],
+      testing_technique: project.testing_technique || [],
+      other_tools: project.other_tools || [],
+      link: project.link,
+      is_active: project.is_active
+    })
+    setModalOpen(true)
+  }
+
+  const handleModalClose = () => {
+    setModalOpen(false)
+    setSelectedProject(null)
   }
 
   // Check if a category has any active projects
@@ -175,10 +195,25 @@ const ExperienceMatrix: React.FC = () => {
                           key={idx}
                           hasLink={!!project.link}
                           parentHasActive={hasActive}
-                          onClick={() => handleProjectClick(project.link)}
+                          onClick={(e) => handleProjectClick(e, project)}
+                          sx={{
+                            position: 'relative',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            display: 'flex',
+                            alignItems: 'center',
+                            '&:hover': {
+                              backgroundColor: hasActive
+                                ? alpha('#00cc99', 0.08)
+                                : alpha('#e08f8f', 0.08),
+                              transform: 'translateX(4px)'
+                            }
+                          }}
                         >
-                          <StatusDot isActive={project.is_active} />
-                          <ProjectName>{project.name}</ProjectName>
+                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flex: 1 }}>
+                            <StatusDot isActive={project.is_active} />
+                            <ProjectName>{project.name}</ProjectName>
+                          </Box>
                         </ProjectItem>
                       ))}
                     </ProjectList>
@@ -189,6 +224,13 @@ const ExperienceMatrix: React.FC = () => {
           })}
         </Grid>
       </Box>
+
+      {/* Detail Modal */}
+      <DetailExperienceModal
+        open={modalOpen}
+        onClose={handleModalClose}
+        project={selectedProject}
+      />
     </ExpertiseSection>
   )
 }
