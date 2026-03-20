@@ -54,3 +54,15 @@ export const MyAchivement: Achivment[] = [
     ]
   }
 ]
+
+export const ProductionBugFound = [
+  "Missing field Diskon Ongkir and Biaya Tambahan [OLA Website]",
+  "Wrong Total Price Calculation [OLA CMS]",
+  "Cek Status Pesanan - Missing Error Message [OLA Website]",
+  "EVO MDN Should not allowed to buy certain unlimited type product [OLA Website]",
+  "Missing Payment Time [OLA CMS]",
+  "Top Up Eload - Wrong Error message [OLA Website]",
+  "Cannot Edit Profile [OLA Website]",
+  "Missing Icon and Weird Transaction Name [Shopee TW Seller Wallet]"
+  
+];

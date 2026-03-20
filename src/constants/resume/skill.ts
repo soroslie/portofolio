@@ -11,8 +11,7 @@ export const MySkill: Skill[] = [
     icon: CodeIcon,
     color: '#60A5FA', // Soft blue (option 4)
     list: [
-      { name: 'Javascript', level: 5 },
-      { name: 'Typescript', level: 5 },
+      { name: 'JS/TS', level: 5 },
       { name: 'Dart', level: 3 },
       { name: 'SQL', level: 3 },
       { name: 'Swift', level: 3 },
@@ -29,11 +28,10 @@ export const MySkill: Skill[] = [
       { name: 'Flutter', level: 2 },
       { name: 'NodeJS Express', level: 5 },
       { name: 'Embedded Javascript', level: 3 },
-      { name: 'ReactJS/TS', level: 5 },
-      { name: 'Redis', level: 3 },
-      { name: 'MySQL Server', level: 4 },
+      { name: 'NEXT/React JS&TS', level: 5 },
+      { name: 'Vue JS', level: 5 },
       { name: 'Go Gin', level: 3 },
-      { name: 'Tailwind', level: 4 }
+      { name: 'Tailwind/Material UI/Bootstrap', level: 4 }
     ]
   },
   {
@@ -43,10 +41,14 @@ export const MySkill: Skill[] = [
     list: [
       { name: 'Figma', level: 3 },
       { name: 'Adobe XD', level: 4 },
-      { name: 'Jira', level: 5 },
+      { name: 'JIRA', level: 5 },
+      { name: 'Confluence', level: 5 },
       { name: 'Postman', level: 5 },
       { name: 'Git', level: 5 },
-      { name: 'ElasticSearch', level: 3 }
+      { name: 'ElasticSearch', level: 3 },
+      { name: 'Redis', level: 3 },
+      { name: 'MySQL/PostgreSQL/MariaDB', level: 4 },
+
     ]
   },
   {
@@ -62,7 +64,8 @@ export const MySkill: Skill[] = [
       { name: 'Katalon', level: 2 },
       { name: 'Jmeter', level: 2 },
       { name: 'Allure', level: 2 },
-      { name: 'Charles', level: 2 }
+      { name: 'Charles', level: 3 },
+      { name: 'React Testing Library', level: 2 }
     ]
   }
 ]

@@ -17,6 +17,7 @@ import {
   ProjectName,
   StatsChip
 } from './ExperienceMatrix.style'
+import { ProductionBugFound } from '../../constants/resume/achivement'
 
 // Create motion components
 const MotionBox = motion(Box)
@@ -25,7 +26,7 @@ const MotionGrid = motion(Grid)
 const ExperienceMatrix: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<ProjectDetail | null>(null)
   const [modalOpen, setModalOpen] = React.useState(false)
-  
+
   // Refs for scroll animations
   const sectionRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
@@ -40,13 +41,13 @@ const ExperienceMatrix: React.FC = () => {
   // Scroll progress for parallax effects
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ['start end', 'end start']
   })
 
   // Transform values based on scroll
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
   const backgroundOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 0.8, 0.3])
-  
+
   // For title - we'll use a simple opacity transform without MotionValue in sx
   const titleOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
@@ -65,6 +66,8 @@ const ExperienceMatrix: React.FC = () => {
   const activelyHandling = MyExperience.reduce((acc, curr) => {
     return acc + curr.list.filter((project) => project.is_active).length
   }, 0)
+
+  const prodBugsFound = ProductionBugFound.length
 
   const handleProjectClick = (event: React.MouseEvent<HTMLElement>, project: any) => {
     event.stopPropagation()
@@ -118,7 +121,7 @@ const ExperienceMatrix: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 12,
         stiffness: 100
       }
@@ -138,7 +141,7 @@ const ExperienceMatrix: React.FC = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 15,
         stiffness: 200
       }
@@ -156,7 +159,7 @@ const ExperienceMatrix: React.FC = () => {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 15,
         stiffness: 100,
         delay: custom * 0.1
@@ -174,7 +177,7 @@ const ExperienceMatrix: React.FC = () => {
       y: -8,
       scale: 1.02,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 10,
         stiffness: 300
       }
@@ -187,7 +190,7 @@ const ExperienceMatrix: React.FC = () => {
       x: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 12,
         stiffness: 100,
         delay: custom * 0.05
@@ -196,7 +199,7 @@ const ExperienceMatrix: React.FC = () => {
     hover: {
       x: 8,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 10,
         stiffness: 300
       }
@@ -231,12 +234,12 @@ const ExperienceMatrix: React.FC = () => {
           }}
           animate={{
             scale: isSectionInView ? [1, 1.2, 1] : 1,
-            rotate: isSectionInView ? [0, 180, 360] : 0,
+            rotate: isSectionInView ? [0, 180, 360] : 0
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: 'linear'
           }}
         />
         <motion.div
@@ -253,12 +256,12 @@ const ExperienceMatrix: React.FC = () => {
           }}
           animate={{
             scale: isSectionInView ? [1, 1.3, 1] : 1,
-            rotate: isSectionInView ? [0, -180, -360] : 0,
+            rotate: isSectionInView ? [0, -180, -360] : 0
           }}
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "linear"
+            ease: 'linear'
           }}
         />
       </Box>
@@ -268,8 +271,8 @@ const ExperienceMatrix: React.FC = () => {
         ref={statsRef}
         sx={{ position: 'relative', zIndex: 1 }}
         variants={containerVariants}
-        initial="hidden"
-        animate={isStatsInView ? "visible" : "exit"}
+        initial='hidden'
+        animate={isStatsInView ? 'visible' : 'exit'}
       >
         {/* Title with scroll-based opacity */}
         <motion.h1
@@ -308,7 +311,8 @@ const ExperienceMatrix: React.FC = () => {
           {[
             { value: totalProjects, label: 'Projects Developed' },
             { value: automationProjects, label: 'Automation Developed' },
-            { value: activelyHandling, label: 'Actively Handling' }
+            { value: activelyHandling, label: 'Actively Handling' },
+            { value: prodBugsFound, label: 'PROD Bug Found' }
           ].map((stat, index) => (
             <MotionBox
               key={index}
@@ -316,19 +320,19 @@ const ExperienceMatrix: React.FC = () => {
               variants={statVariants}
               whileHover={{
                 scale: 1.1,
-                transition: { type: "spring", damping: 10 }
+                transition: { type: 'spring', damping: 10 }
               }}
             >
               <motion.div
                 animate={{
-                  textShadow: isStatsInView 
+                  textShadow: isStatsInView
                     ? ['0 0 18px #00cc99', '0 0 30px #00cc99', '0 0 18px #00cc99']
                     : '0 0 18px #00cc99'
                 }}
                 transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: 'easeInOut'
                 }}
               >
                 <Typography
@@ -355,8 +359,8 @@ const ExperienceMatrix: React.FC = () => {
           container
           spacing={2}
           variants={containerVariants}
-          initial="hidden"
-          animate={isGridInView ? "visible" : "exit"}
+          initial='hidden'
+          animate={isGridInView ? 'visible' : 'exit'}
         >
           {MyExperience.map((item, index) => {
             const hasActive = categoryHasActiveProjects(item)
@@ -374,9 +378,9 @@ const ExperienceMatrix: React.FC = () => {
                 <motion.div
                   variants={cardVariants}
                   custom={index}
-                  whileHover="hover"
-                  initial="hidden"
-                  animate={isGridInView ? "visible" : "exit"}
+                  whileHover='hover'
+                  initial='hidden'
+                  animate={isGridInView ? 'visible' : 'exit'}
                 >
                   <ExpertiseCard
                     elevation={0}
@@ -390,10 +394,7 @@ const ExperienceMatrix: React.FC = () => {
                     />
 
                     <CardHeader $hasActiveProjects={hasActive}>
-                      <motion.div
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.5 }}
-                      >
+                      <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
                         <IconWrapper className='icon-wrapper' $hasActiveProjects={hasActive}>
                           {item.icon}
                         </IconWrapper>
@@ -411,7 +412,7 @@ const ExperienceMatrix: React.FC = () => {
                             key={idx}
                             variants={projectItemVariants}
                             custom={idx}
-                            whileHover="hover"
+                            whileHover='hover'
                           >
                             <ProjectItem
                               hasLink={!!project.link}
@@ -428,12 +429,12 @@ const ExperienceMatrix: React.FC = () => {
                               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flex: 1 }}>
                                 <motion.div
                                   animate={{
-                                    scale: project.is_active ? [1, 1.2, 1] : 1,
+                                    scale: project.is_active ? [1, 1.2, 1] : 1
                                   }}
                                   transition={{
                                     duration: 2,
                                     repeat: project.is_active ? Infinity : 0,
-                                    ease: "easeInOut"
+                                    ease: 'easeInOut'
                                   }}
                                 >
                                   <StatusDot isActive={project.is_active} />

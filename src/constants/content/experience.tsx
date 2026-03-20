@@ -18,7 +18,7 @@ const MyExperience: Experience[] = [
         description:
           'Tested the newly developed unified web grosir platform for Axis, Smartfren, and XL, ensuring seamless integration and functionality across all three brands.',
         fe_frameworks: ['ReactJS'],
-        be_frameworks: ['Go'],
+        be_frameworks: ['Go', 'MariaDB (Smartfren)', 'Java (AXIS)'],
         testing_tools: ['Postman'],
         testing_technique: ['Manual Testing', 'Regression Testing', 'Smoke Testing'],
         other_tools: ['JIRA']
@@ -32,7 +32,7 @@ const MyExperience: Experience[] = [
           'Led testing efforts including test task breakdown, debugging production issues, and identifying risk concerns for new feature development and regression testing on both user-facing website and CMS platform.',
         fe_frameworks: ['ReactJS'],
         be_frameworks: ['Go', 'MariaDB'],
-        testing_tools: ['Cypress', 'Postman', 'Katalon'],
+        testing_tools: ['Cypress', 'Postman', 'Katalon (Migrating)', "Tweak"],
         testing_technique: [
           'Manual Testing',
           'Regression Testing',
@@ -61,12 +61,12 @@ const MyExperience: Experience[] = [
         other_tools: ['JIRA']
       },
       {
-        name: 'Smartfren - VIVA Website',
+        name: 'Smartfren - VIVA',
         link: 'https://play.google.com/store/apps/details?id=com.smartfren.snoc&hl=id',
         is_active: false,
         role: 'UAT Tester',
         description:
-          'Collaborated with third-party vendors to perform UAT testing for the VIVA application, reviewing UAT test cases against SRS and BRD documentation to ensure requirement coverage.',
+          'Collaborated with third-party vendors to perform UAT testing for the VIVA web & mobile app, reviewing UAT test cases against SRS and BRD documentation to ensure requirement coverage.',
         fe_frameworks: [],
         be_frameworks: [],
         testing_tools: [],
@@ -87,7 +87,7 @@ const MyExperience: Experience[] = [
         other_tools: ['JIRA', 'Confluence', 'Internal Debugging Tools']
       },
       {
-        name: 'Shopee - Seller Wallet',
+        name: 'Shopee - Seller Wallet Feature',
         link: 'https://seller.shopee.co.id/',
         is_active: false,
         role: 'Feature QA',
@@ -95,7 +95,7 @@ const MyExperience: Experience[] = [
           'Actively contributed to requirement meetings, identified potential risks during design phases, and conducted comprehensive testing for new features and regression scenarios.',
         fe_frameworks: ['ReactJS', 'React Native'],
         be_frameworks: ['Go', 'PostgreSQL'],
-        testing_tools: ['Charles Proxy', 'Cypress', 'Postman'],
+        testing_tools: ['Charles Proxy', 'Cypress', 'Postman', "Tweak"],
         testing_technique: ['Manual Testing', 'Regression Testing', 'Smoke Testing'],
         other_tools: ['JIRA', 'Confluence', 'Internal Debugging Tools']
       },
@@ -310,7 +310,7 @@ const MyExperience: Experience[] = [
         other_tools: ['Requests - Python Library']
       },
       {
-        name: 'Academic Projects - Sales Forecaster',
+        name: 'Sales Forecaster (Academic)',
         link: 'https://github.com/soroslie/sales_forecast',
         is_active: false,
         role: 'Developer (Student Projects)',
@@ -340,6 +340,18 @@ const MyExperience: Experience[] = [
         testing_tools: [],
         testing_technique: [],
         other_tools: ['Asana', 'Postman']
+      },
+      {
+        name: 'Tic Tac Toe (Academic)',
+        link: 'https://github.com/soroslie/simple-tic-tac-toe',
+        is_active: false,
+        role: 'Developer (Student Projects)',
+        description: 'Simple tic tac toe game built using flutter',
+        fe_frameworks: ['Flutter'],
+        be_frameworks: [],
+        testing_tools: [],
+        testing_technique: [],
+        other_tools: []
       }
     ],
     icon: <StayPrimaryPortraitIcon fontSize='inherit' />

@@ -15,7 +15,7 @@ const Profile = (): JSX.Element => {
           viewport={{ once: false }}
         >
           <S.Heading>
-            <span>Soros Lie</span>
+            <span>Tester - Product - Developer</span>
           </S.Heading>
           <S.SubContent>{SubHeading[2]}</S.SubContent>
         </S.LeftSection>
