@@ -220,7 +220,7 @@ const MyExperience: Experience[] = [
         other_tools: ['Postman', 'Asana']
       },
       {
-        name: 'Polytron - Employee Self Service & Dashboard',
+        name: 'Polytron - Employee Self Service & CMS',
         link: 'https://ess.polytron.co.id/login',
         is_active: false,
         role: 'FE Developer',
@@ -294,8 +294,40 @@ const MyExperience: Experience[] = [
     icon: <DescriptionOutlinedIcon fontSize='inherit' />
   },
   {
-    name: 'mobile apps',
+    name: 'apps',
     list: [
+      {
+        name: 'cURL Response Compare',
+        link: 'https://github.com/soroslie/CURL-API-Comparison',
+        is_active: true,
+        role: 'Developer',
+        description:
+          'Compare 2 curl response and generate a report to show the difference between 2 response',
+        fe_frameworks: ['TK Python'],
+        be_frameworks: [],
+        testing_tools: [],
+        testing_technique: [],
+        other_tools: ['Requests - Python Library']
+      },
+      {
+        name: 'Academic Projects - Sales Forecaster',
+        link: 'https://github.com/soroslie/sales_forecast',
+        is_active: false,
+        role: 'Developer (Student Projects)',
+        description:
+          'A comparative sales forecasting system implementing Prophet, LSTM, and SARIMAX models to predict retail sales patterns. The project includes data processing pipelines and review analytics to enhance forecast accuracy.',
+        fe_frameworks: ['matplotlib'],
+        be_frameworks: ['Python', 'Keras', 'TensorFlow'],
+        testing_tools: [],
+        testing_technique: [],
+        other_tools: [
+          'Prophet',
+          'google-play-scraper',
+          'app_store_scraper',
+          'statsmodels',
+          'scikit-learn'
+        ]
+      },
       {
         name: 'My Polytron App',
         link: 'https://play.google.com/store/apps/details?id=com.polytron.mypolytron&hl=id',
