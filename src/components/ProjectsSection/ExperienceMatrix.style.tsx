@@ -84,7 +84,8 @@ export const cardItem = (columns: number): SxProps<Theme> => ({
     sm: columns === 2 ? 'calc(50% - 12px)' : '100%',
     md: columns === 3 ? 'calc(33.333% - 16px)' : columns === 2 ? 'calc(50% - 12px)' : '100%'
   },
-  display: 'flex'
+  display: 'flex',
+  marginBottom: 5 // Add this line
 })
 
 export const paperStyles = (hasActiveProjects: boolean): SxProps<Theme> => ({
@@ -92,7 +93,7 @@ export const paperStyles = (hasActiveProjects: boolean): SxProps<Theme> => ({
   bgcolor: 'rgba(128, 128, 128, 0.15)',
   backdropFilter: 'blur(10px)',
   color: '#ffffff',
-  border: `1px solid ${hasActiveProjects ? 'rgba(0, 225, 150, 0.1)' : 'rgba(220, 90, 90, 0.15)'}`,
+  border: `1px solid ${hasActiveProjects ? 'rgba(0, 225, 150, 0.2)' : 'rgba(220, 90, 90, 0.2)'}`, // Increased opacity
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
   borderRadius: 4,
   transition: 'all 0.3s ease-in-out',
@@ -103,11 +104,11 @@ export const paperStyles = (hasActiveProjects: boolean): SxProps<Theme> => ({
   width: '100%',
   height: '100%',
   '&:hover': {
-    transform: 'translateY(-8px)', // More elevation
-    borderColor: hasActiveProjects ? 'rgba(0, 204, 153, 0.4)' : 'rgba(224, 111, 111, 0.4)',
+    transform: 'translateY(-8px)',
+    borderColor: hasActiveProjects ? 'rgba(0, 204, 153, 0.6)' : 'rgba(224, 111, 111, 0.6)', // Increased opacity
     boxShadow: hasActiveProjects
-      ? '0 16px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 204, 153, 0.3)' // More glow and elevation
-      : '0 16px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(224, 111, 111, 0.3)',
+      ? '0 16px 32px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 204, 153, 0.5)' // Wider glow (30px instead of 20px)
+      : '0 16px 32px rgba(0, 0, 0, 0.5), 0 0 30px rgba(224, 111, 111, 0.5)',
     bgcolor: 'rgba(18, 18, 18, 0.85)'
   }
 })
@@ -117,19 +118,19 @@ export const topGradient = (hasActiveProjects: boolean): SxProps<Theme> => ({
   top: 0,
   left: '50%',
   transform: 'translateX(-50%)',
-  width: '25%', // Changed to 25%
+  width: '40%', // Increased from 25% to 40%
   height: '3px',
   background: hasActiveProjects ? '#00cc99' : '#e06f6f',
   borderRadius: '0 0 4px 4px',
   transition: 'all 0.3s ease-in-out',
-  boxShadow: hasActiveProjects 
-    ? '0 0 12px #00cc99, 0 0 8px #00cc99' // More glow
-    : '0 0 12px #e06f6f, 0 0 8px #e06f6f',
+  boxShadow: hasActiveProjects
+    ? '0 0 20px #00cc99, 0 0 12px #00cc99' // Increased blur radius
+    : '0 0 20px #e06f6f, 0 0 12px #e06f6f',
   '&:hover': {
-    width: '30%',
-    boxShadow: hasActiveProjects 
-      ? '0 0 20px #00cc99, 0 0 12px #00cc99'
-      : '0 0 20px #e06f6f, 0 0 12px #e06f6f'
+    width: '50%', // Increased from 30% to 50%
+    boxShadow: hasActiveProjects
+      ? '0 0 30px #00cc99, 0 0 20px #00cc99' // Even wider on hover
+      : '0 0 30px #e06f6f, 0 0 20px #e06f6f'
   }
 })
 
@@ -235,7 +236,11 @@ export const projectList: SxProps<Theme> = {
   width: '100%'
 }
 
-export const projectItem = (hasLink: boolean, parentHasActive: boolean, isActive: boolean): SxProps<Theme> => ({
+export const projectItem = (
+  hasLink: boolean,
+  parentHasActive: boolean,
+  isActive: boolean
+): SxProps<Theme> => ({
   color: isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.5)',
   fontSize: '0.8rem',
   padding: '6px 12px',
@@ -269,8 +274,8 @@ export const statusDot = (isActive: boolean): SxProps<Theme> => ({
   flexShrink: 0,
   transition: 'all 0.3s ease-in-out',
   '&:hover': {
-    filter: isActive 
-      ? 'drop-shadow(0 0 12px #4caf50) drop-shadow(0 0 8px #4caf50)' 
+    filter: isActive
+      ? 'drop-shadow(0 0 12px #4caf50) drop-shadow(0 0 8px #4caf50)'
       : 'drop-shadow(0 0 10px #e08f8f)'
   }
 })

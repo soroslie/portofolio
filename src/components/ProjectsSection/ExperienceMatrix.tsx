@@ -135,7 +135,7 @@ const ExperienceMatrix: React.FC = () => {
   }
 
   return (
-    <Box sx={styles.sectionContainer}>
+    <Box sx={styles.sectionContainer} id='my-projects'>
       <Box sx={styles.innerContainer}>
         {/* Title */}
         <motion.div
