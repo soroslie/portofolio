@@ -32,7 +32,7 @@ const MyExperience: Experience[] = [
           'Led testing efforts including test task breakdown, debugging production issues, and identifying risk concerns for new feature development and regression testing on both user-facing website and CMS platform.',
         fe_frameworks: ['ReactJS'],
         be_frameworks: ['Go', 'MariaDB'],
-        testing_tools: ['Cypress', 'Postman', 'Katalon (Migrating)', "Tweak"],
+        testing_tools: ['Cypress', 'Postman', 'Katalon (Migrating)', 'Tweak'],
         testing_technique: [
           'Manual Testing',
           'Regression Testing',
@@ -95,7 +95,7 @@ const MyExperience: Experience[] = [
           'Actively contributed to requirement meetings, identified potential risks during design phases, and conducted comprehensive testing for new features and regression scenarios.',
         fe_frameworks: ['ReactJS', 'React Native'],
         be_frameworks: ['Go', 'PostgreSQL'],
-        testing_tools: ['Charles Proxy', 'Cypress', 'Postman', "Tweak"],
+        testing_tools: ['Charles Proxy', 'Cypress', 'Postman', 'Tweak'],
         testing_technique: ['Manual Testing', 'Regression Testing', 'Smoke Testing'],
         other_tools: ['JIRA', 'Confluence', 'Internal Debugging Tools']
       },
@@ -132,15 +132,34 @@ const MyExperience: Experience[] = [
     name: 'automation',
     list: [
       {
-        name: 'Smartfren - OLA Web Grosir Website',
-        link: 'https://mitra.smartfren.com/digital-outlet',
+        name: 'XLSmart - Web Grosir Website',
+        link: '',
         is_active: true,
         role: 'Sr. QA Automation',
         description:
-          'Develop automation from scratch to cover regression test cases for both user-facing website and CMS platform, utilizing Cypress.',
+          'Develop automation from scratch to cover regression test cases for website , utilizing Katalon.',
         fe_frameworks: ['ReactJS'],
         be_frameworks: ['Go', 'MariaDB'],
-        testing_tools: ['Cypress', 'Postman', 'Katalon'],
+        testing_tools: ['Katalon'],
+        testing_technique: [
+          'Manual Testing',
+          'Regression Testing',
+          'Smoke Testing',
+          'Automation Testing',
+          'Sanity Testing'
+        ],
+        other_tools: ['Redis', 'JIRA']
+      },
+      {
+        name: 'Smartfren - OLA Web Grosir Website',
+        link: 'https://mitra.smartfren.com/digital-outlet',
+        is_active: false,
+        role: 'Sr. QA Automation',
+        description:
+          'Develop automation from scratch to cover regression test cases for both user-facing website and CMS platform, utilizing Cypress, and migrating to Katalon',
+        fe_frameworks: ['ReactJS'],
+        be_frameworks: ['Go', 'MariaDB'],
+        testing_tools: ['Cypress', 'Katalon'],
         testing_technique: [
           'Manual Testing',
           'Regression Testing',
