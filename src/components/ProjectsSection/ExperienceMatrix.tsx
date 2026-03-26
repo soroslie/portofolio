@@ -114,7 +114,7 @@ const ExperienceMatrix: React.FC = () => {
                   style={{ width: '100%' }}
                 >
                   <Box
-                    sx={styles.projectItem(!!project.link, hasActive, project.is_active)}
+                    sx={styles.projectItem(!!project.link, hasActive)}
                     onClick={(e) => handleProjectClick(e, project)}
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flex: 1 }}>
