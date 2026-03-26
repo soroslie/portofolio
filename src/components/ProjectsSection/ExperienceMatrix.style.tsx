@@ -236,11 +236,7 @@ export const projectList: SxProps<Theme> = {
   width: '100%'
 }
 
-export const projectItem = (
-  hasLink: boolean,
-  parentHasActive: boolean,
-  isActive: boolean
-): SxProps<Theme> => ({
+export const projectItem = (parentHasActive: boolean, isActive: boolean): SxProps<Theme> => ({
   color: isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.5)',
   fontSize: '0.8rem',
   padding: '6px 12px',
